@@ -19,7 +19,7 @@ namespace MyFirstCSharp_01
             // Application.Run(new Form1());
             // Application.Run(new Chapter03_Class());
             // Application.Run(new Chapter03_Class_Test());
-            // Application.Run(new Chapter03_Static_Const());
+            //Application.Run(new Chapter03_Static_Const());
             // Application.Run(new Chapter04_DataChange());
             Application.Run(new Chapter05_StringChange());
 

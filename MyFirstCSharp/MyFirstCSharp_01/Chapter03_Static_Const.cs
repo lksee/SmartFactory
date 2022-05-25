@@ -44,7 +44,12 @@ namespace MyFirstCSharp_01
 
         private void button4_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(Class_Static_2.sValue);
+            Class_Static_2.sValue = "값이 바뀜";
 
+            Class_Static_2 CS2 = new Class_Static_2();
+            MessageBox.Show(CS2.sValue2);
+            CS2.sValue2 = "값이 바뀜";
         }
 
         private void button5_Click(object sender, EventArgs e)
