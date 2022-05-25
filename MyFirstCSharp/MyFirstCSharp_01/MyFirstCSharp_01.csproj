@@ -59,6 +59,24 @@
     <Compile Include="Chapter03_Class_Test.Designer.cs">
       <DependentUpon>Chapter03_Class_Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chapter03_Static_Const.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter03_Static_Const.Designer.cs">
+      <DependentUpon>Chapter03_Static_Const.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter04_DataChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter04_DataChange.Designer.cs">
+      <DependentUpon>Chapter04_DataChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter05_StringChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter05_StringChange.Designer.cs">
+      <DependentUpon>Chapter05_StringChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +90,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chapter03_Class_Test.resx">
       <DependentUpon>Chapter03_Class_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter03_Static_Const.resx">
+      <DependentUpon>Chapter03_Static_Const.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter04_DataChange.resx">
+      <DependentUpon>Chapter04_DataChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter05_StringChange.resx">
+      <DependentUpon>Chapter05_StringChange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
