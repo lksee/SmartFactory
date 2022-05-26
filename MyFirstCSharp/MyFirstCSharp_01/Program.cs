@@ -21,7 +21,10 @@ namespace MyFirstCSharp_01
             // Application.Run(new Chapter03_Class_Test());
             //Application.Run(new Chapter03_Static_Const());
             // Application.Run(new Chapter04_DataChange());
-            Application.Run(new Chapter05_StringChange());
+            //Application.Run(new Chapter05_StringChange());
+            //Application.Run(new Chapter05_StringFind());
+            Application.Run(new Chapter05_StringSplit());
+            //Application.Run(new Chapter05_practice());
 
         } // 프로그램 실행 범위 끝
     }

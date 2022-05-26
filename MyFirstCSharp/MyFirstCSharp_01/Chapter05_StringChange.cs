@@ -59,5 +59,44 @@ namespace MyFirstCSharp_01
 
             textBox3.Text = label1.Text.Insert(iStartIndex, sValue);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // 지정된 위치 범위의 문자를 삭제
+
+            // 1. 삭제 시작 위치 지정
+            int iStartIndex;
+            int.TryParse(textBox7.Text, out iStartIndex);
+
+            // 2. 삭제 종료 위치 지정
+            int iCount;
+            int.TryParse(textBox6.Text, out iCount);
+
+            // 3. 삭제할 문자열 삭제 후 결과 Text
+            textBox8.Text = label1.Text.Remove(iStartIndex, iCount);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            // Trim() 문자열의 앞과 뒤의 빈 공백을 지움.
+            textBox11.Text = label1.Text.Trim();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            // Trim() 문자열의 가장 앞 빈 공백을 지움.
+            textBox9.Text = label1.Text.TrimStart();
+            //textBox9.Text = sTitle.TrimStart();
+            //textBox9.Text = "   asdlfqwejl".TrimStart();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            // Trim() 문자열의 가장 뒤 빈 공백을 지움.
+            textBox10.Text = label1.Text.TrimEnd();
+
+            string sValue = label1.Text.TrimEnd();
+            textBox10.Text = sValue;
+        }
     }
 }
