@@ -263,8 +263,9 @@ FakesAssemblies/
 *.opt
 
 
-# pdf, md, png, env
+# pdf, md, png, env, jpg
 *.pdf
 *.md
 *.png
 *.env
+*.jpg
