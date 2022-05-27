@@ -23,9 +23,11 @@ namespace MyFirstCSharp_01
             // Application.Run(new Chapter04_DataChange());
             //Application.Run(new Chapter05_StringChange());
             //Application.Run(new Chapter05_StringFind());
-            Application.Run(new Chapter05_StringSplit());
+            //Application.Run(new Chapter05_StringSplit());
             //Application.Run(new Chapter05_practice());
-
+            //Application.Run(new Chapter06_Null());
+            //Application.Run(new Chapter07_Operator());
+            Application.Run(new Chapter08_Method_Return());
         } // 프로그램 실행 범위 끝
     }
 }
