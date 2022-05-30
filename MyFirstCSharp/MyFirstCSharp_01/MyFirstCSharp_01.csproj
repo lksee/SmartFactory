@@ -113,6 +113,18 @@
     <Compile Include="Chapter08_Method_Return.Designer.cs">
       <DependentUpon>Chapter08_Method_Return.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chapter09_If_BranchingStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter09_If_BranchingStatement.Designer.cs">
+      <DependentUpon>Chapter09_If_BranchingStatement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter09_If_BranchingStatement_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter09_If_BranchingStatement_Test.Designer.cs">
+      <DependentUpon>Chapter09_If_BranchingStatement_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +165,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chapter08_Method_Return.resx">
       <DependentUpon>Chapter08_Method_Return.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter09_If_BranchingStatement.resx">
+      <DependentUpon>Chapter09_If_BranchingStatement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter09_If_BranchingStatement_Test.resx">
+      <DependentUpon>Chapter09_If_BranchingStatement_Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

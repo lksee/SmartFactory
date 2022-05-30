@@ -27,7 +27,9 @@ namespace MyFirstCSharp_01
             //Application.Run(new Chapter05_practice());
             //Application.Run(new Chapter06_Null());
             //Application.Run(new Chapter07_Operator());
-            Application.Run(new Chapter08_Method_Return());
+            //Application.Run(new Chapter08_Method_Return());
+            //Application.Run(new Chapter09_If_BranchingStatement());
+            Application.Run(new Chapter09_If_BranchingStatement_Test());
         } // 프로그램 실행 범위 끝
     }
 }
