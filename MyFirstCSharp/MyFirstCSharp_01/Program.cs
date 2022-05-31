@@ -32,7 +32,8 @@ namespace MyFirstCSharp_01
             //Application.Run(new Chapter09_If_BranchingStatement_Test());
             //Application.Run(new Chapter09_Switch_BranchingStatement());
             //Application.Run(new Chapter09_Switch_BranchingStatement_Test());
-            Application.Run(new Chapter10_Loop01_For());
+            //Application.Run(new Chapter10_Loop01_For());
+            Application.Run(new Chapter10_Loop_For_Test());
         } // 프로그램 실행 범위 끝
     }
 }

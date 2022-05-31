@@ -76,11 +76,14 @@ namespace MyFirstCSharp_01
                 // 4. sBase에 현재 i 단수 문자열 대입
                 // 첫번째 반복일 때 (2 * )
                 sBase = $"{Convert.ToString(i)} * ";
+                
+                // sBase = Convert.ToString(i) + " * ";
 
                 // 5. rhqgowlsms tn 1~9 반복문.
                 for (int j = 1; j <= 9; j++)
                 {
                     // 6. sSub 문자변수에 곱해지는 수와 결과 값을 베이스 문자열과 합
+                    // "j = i*j"
                     sSub = $"{Convert.ToString(j)} = {Convert.ToString(i*j)}";
                     textBox1.Text += $"{sBase}{sSub}\r\n";
 

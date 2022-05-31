@@ -143,6 +143,12 @@
     <Compile Include="Chapter10_Loop01_For.Designer.cs">
       <DependentUpon>Chapter10_Loop01_For.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chapter10_Loop_For_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter10_Loop_For_Test.Designer.cs">
+      <DependentUpon>Chapter10_Loop_For_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chapter10_Loop01_For.resx">
       <DependentUpon>Chapter10_Loop01_For.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter10_Loop_For_Test.resx">
+      <DependentUpon>Chapter10_Loop_For_Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
