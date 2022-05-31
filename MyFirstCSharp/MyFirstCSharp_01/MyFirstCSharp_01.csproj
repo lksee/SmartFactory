@@ -125,6 +125,24 @@
     <Compile Include="Chapter09_If_BranchingStatement_Test.Designer.cs">
       <DependentUpon>Chapter09_If_BranchingStatement_Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chapter09_Switch_BranchingStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter09_Switch_BranchingStatement.Designer.cs">
+      <DependentUpon>Chapter09_Switch_BranchingStatement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter09_Switch_BranchingStatement_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter09_Switch_BranchingStatement_Test.Designer.cs">
+      <DependentUpon>Chapter09_Switch_BranchingStatement_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter10_Loop01_For.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter10_Loop01_For.Designer.cs">
+      <DependentUpon>Chapter10_Loop01_For.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +189,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chapter09_If_BranchingStatement_Test.resx">
       <DependentUpon>Chapter09_If_BranchingStatement_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter09_Switch_BranchingStatement.resx">
+      <DependentUpon>Chapter09_Switch_BranchingStatement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter09_Switch_BranchingStatement_Test.resx">
+      <DependentUpon>Chapter09_Switch_BranchingStatement_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter10_Loop01_For.resx">
+      <DependentUpon>Chapter10_Loop01_For.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
