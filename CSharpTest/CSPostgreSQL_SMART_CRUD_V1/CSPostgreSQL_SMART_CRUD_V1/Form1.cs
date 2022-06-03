@@ -7,7 +7,9 @@ namespace CSPostgreSQL_SMART_CRUD_V1
 {
     public partial class Form1 : Form
     {
+        // id --> autoid
         private string id = "";
+        // 조회된 DataTable의 row 개수
         private int intRow = 0;
 
         public Form1()
@@ -28,8 +30,8 @@ namespace CSPostgreSQL_SMART_CRUD_V1
                 genderComboBox.SelectedIndex = 0;
             }
 
-            updateButton.Text = "Update ()";
-            deleteButton.Text = "Delete ()";
+            updateButton.Text = "Update ( )";
+            deleteButton.Text = "Delete ( )";
 
             keywordTextBox.Clear();
 
@@ -90,6 +92,7 @@ namespace CSPostgreSQL_SMART_CRUD_V1
 
         }
 
+        // param : sql문이 select인지 update인지 delete인지 구분하기 위한 인자 값
         private void execute(string mySQL, string param)
         {
             CRUD.cmd = new NpgsqlCommand(mySQL, CRUD.con);
@@ -97,6 +100,10 @@ namespace CSPostgreSQL_SMART_CRUD_V1
             CRUD.PerformCRUD(CRUD.cmd);
         }
 
+        /// <summary>
+        /// SQL을 완성하기 위한 Parameter를 설정한다.
+        /// </summary>
+        /// <param name="str">Select/Delete/Update를 구분하기 위한 Parameter.</param>
         private void addParameters(string str)
         {
             CRUD.cmd.Parameters.Clear();
@@ -104,6 +111,7 @@ namespace CSPostgreSQL_SMART_CRUD_V1
             CRUD.cmd.Parameters.AddWithValue("lastname", lastNameTextBox.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("gender", genderComboBox.SelectedItem.ToString());
 
+            // UPDATE와 DELETE문 SQL에는 삭제할 대상을 가르키는 id값(autoid에 해당)이 필요하다.
             if(str == "Update" || str == "Delete" && !string.IsNullOrEmpty(this.id))
             {
                 CRUD.cmd.Parameters.AddWithValue("id", this.id);
@@ -118,7 +126,7 @@ namespace CSPostgreSQL_SMART_CRUD_V1
                 return;
             }
 
-            CRUD.sql = "INSERT INTO test_data(firstname, lastname, gender) VALUES(@firstName, @lastName, @gender)";
+            CRUD.sql = "INSERT INTO test_data(firstname, lastname, gender) VALUES(@firstname, @lastname, @gender)";
 
             execute(CRUD.sql, "Insert");
 
@@ -148,7 +156,7 @@ namespace CSPostgreSQL_SMART_CRUD_V1
                 return;
             }
 
-            CRUD.sql = "UPDATE test_data SET firstname = @firstName, lastname = @lastName, gender = @gender WHERE autoid = @id::integer";
+            CRUD.sql = "UPDATE test_data SET firstname = @firstname, lastname = @lastname, gender = @gender WHERE autoid = @id::integer";
 
             execute(CRUD.sql, "Update");
 

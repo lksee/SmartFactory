@@ -143,11 +143,41 @@
     <Compile Include="Chapter10_Loop01_For.Designer.cs">
       <DependentUpon>Chapter10_Loop01_For.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chapter10_Loop02_While.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter10_Loop02_While.Designer.cs">
+      <DependentUpon>Chapter10_Loop02_While.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter10_Loop03_foreach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter10_Loop03_foreach.Designer.cs">
+      <DependentUpon>Chapter10_Loop03_foreach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chapter10_Loop_For_Test.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Chapter10_Loop_For_Test.Designer.cs">
       <DependentUpon>Chapter10_Loop_For_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter10_Loop_For_Test2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter10_Loop_For_Test2.Designer.cs">
+      <DependentUpon>Chapter10_Loop_For_Test2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter11_Array.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter11_Array.Designer.cs">
+      <DependentUpon>Chapter11_Array.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter11_Array_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter11_Array_Test.Designer.cs">
+      <DependentUpon>Chapter11_Array_Test.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -205,8 +235,23 @@
     <EmbeddedResource Include="Chapter10_Loop01_For.resx">
       <DependentUpon>Chapter10_Loop01_For.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Chapter10_Loop02_While.resx">
+      <DependentUpon>Chapter10_Loop02_While.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter10_Loop03_foreach.resx">
+      <DependentUpon>Chapter10_Loop03_foreach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chapter10_Loop_For_Test.resx">
       <DependentUpon>Chapter10_Loop_For_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter10_Loop_For_Test2.resx">
+      <DependentUpon>Chapter10_Loop_For_Test2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter11_Array.resx">
+      <DependentUpon>Chapter11_Array.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter11_Array_Test.resx">
+      <DependentUpon>Chapter11_Array_Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -80,6 +80,11 @@ namespace MyFirstCSharp_01
 
         private bool _validInputValue2()
         {
+            if (textBox1.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("값을 입력해주세요.");
+                return false;
+            }
             if(Convert.ToInt32(textBox1.Text) >= Convert.ToInt32(textBox2.Text))
             {
                 MessageBox.Show("올바른 범위를 입력해주세요.");
