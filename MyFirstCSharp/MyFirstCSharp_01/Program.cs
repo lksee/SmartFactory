@@ -37,7 +37,10 @@ namespace MyFirstCSharp_01
             //Application.Run(new Chapter10_Loop_For_Test2());
             //Application.Run(new Chapter10_Loop03_foreach());
             //Application.Run(new Chapter11_Array());
-            Application.Run(new Chapter11_Array_Test());
+            //Application.Run(new Chapter11_Array_Test());
+            //Application.Run(new Chapter11_Array_Test2());
+            //Application.Run(new Chapter11_Middle_Exam_TestCode2());
+            Application.Run(new Chapter11_Middle_TestCode3());
         } // 프로그램 실행 범위 끝
     }
 }

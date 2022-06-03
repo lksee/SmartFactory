@@ -179,6 +179,30 @@
     <Compile Include="Chapter11_Array_Test.Designer.cs">
       <DependentUpon>Chapter11_Array_Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chapter11_Array_Test2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter11_Array_Test2.Designer.cs">
+      <DependentUpon>Chapter11_Array_Test2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter11_Middle_Exam_TestCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter11_Middle_Exam_TestCode.Designer.cs">
+      <DependentUpon>Chapter11_Middle_Exam_TestCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter11_Middle_Exam_TestCode2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter11_Middle_Exam_TestCode2.Designer.cs">
+      <DependentUpon>Chapter11_Middle_Exam_TestCode2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter11_Middle_TestCode3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter11_Middle_TestCode3.Designer.cs">
+      <DependentUpon>Chapter11_Middle_TestCode3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +276,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chapter11_Array_Test.resx">
       <DependentUpon>Chapter11_Array_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter11_Array_Test2.resx">
+      <DependentUpon>Chapter11_Array_Test2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter11_Middle_Exam_TestCode.resx">
+      <DependentUpon>Chapter11_Middle_Exam_TestCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter11_Middle_Exam_TestCode2.resx">
+      <DependentUpon>Chapter11_Middle_Exam_TestCode2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter11_Middle_TestCode3.resx">
+      <DependentUpon>Chapter11_Middle_TestCode3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
