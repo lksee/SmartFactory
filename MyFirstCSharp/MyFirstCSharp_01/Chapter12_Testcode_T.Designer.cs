@@ -67,6 +67,19 @@
             this.buttonOrderItem1 = new System.Windows.Forms.Button();
             this.labelQuantity1 = new System.Windows.Forms.Label();
             this.labelPrice1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBoxManager.SuspendLayout();
             this.groupBoxMargin.SuspendLayout();
             this.groupBoxOrder.SuspendLayout();
@@ -79,6 +92,8 @@
             // 
             // groupBoxManager
             // 
+            this.groupBoxManager.Controls.Add(this.label13);
+            this.groupBoxManager.Controls.Add(this.label11);
             this.groupBoxManager.Controls.Add(this.groupBoxMargin);
             this.groupBoxManager.Controls.Add(this.groupBoxOrder);
             this.groupBoxManager.Controls.Add(this.groupBoxTransactionDetail);
@@ -289,14 +304,16 @@
             // labelManagerBalance
             // 
             this.labelManagerBalance.AutoSize = true;
-            this.labelManagerBalance.Location = new System.Drawing.Point(12, 17);
+            this.labelManagerBalance.Location = new System.Drawing.Point(99, 17);
             this.labelManagerBalance.Name = "labelManagerBalance";
-            this.labelManagerBalance.Size = new System.Drawing.Size(128, 12);
+            this.labelManagerBalance.Size = new System.Drawing.Size(41, 12);
             this.labelManagerBalance.TabIndex = 9;
-            this.labelManagerBalance.Text = "labelManagerBalance";
+            this.labelManagerBalance.Text = "100000";
             // 
             // groupBoxClient
             // 
+            this.groupBoxClient.Controls.Add(this.label12);
+            this.groupBoxClient.Controls.Add(this.label10);
             this.groupBoxClient.Controls.Add(this.buttonMakePayment);
             this.groupBoxClient.Controls.Add(this.buttonCancelOrder);
             this.groupBoxClient.Controls.Add(this.buttonToTalPayment);
@@ -319,6 +336,7 @@
             this.buttonMakePayment.TabIndex = 8;
             this.buttonMakePayment.Text = "결제하기";
             this.buttonMakePayment.UseVisualStyleBackColor = true;
+            this.buttonMakePayment.Click += new System.EventHandler(this.buttonMakePayment_Click);
             // 
             // buttonCancelOrder
             // 
@@ -337,18 +355,22 @@
             this.buttonToTalPayment.TabIndex = 6;
             this.buttonToTalPayment.Text = "총 결제금액 보기";
             this.buttonToTalPayment.UseVisualStyleBackColor = true;
+            this.buttonToTalPayment.Click += new System.EventHandler(this.buttonToTalPayment_Click);
             // 
             // labelClientBalance
             // 
             this.labelClientBalance.AutoSize = true;
             this.labelClientBalance.Location = new System.Drawing.Point(12, 149);
             this.labelClientBalance.Name = "labelClientBalance";
-            this.labelClientBalance.Size = new System.Drawing.Size(110, 12);
+            this.labelClientBalance.Size = new System.Drawing.Size(41, 12);
             this.labelClientBalance.TabIndex = 6;
-            this.labelClientBalance.Text = "labelClientBalance";
+            this.labelClientBalance.Text = "100000";
             // 
             // groupBoxItem3
             // 
+            this.groupBoxItem3.Controls.Add(this.label9);
+            this.groupBoxItem3.Controls.Add(this.label6);
+            this.groupBoxItem3.Controls.Add(this.label3);
             this.groupBoxItem3.Controls.Add(this.buttonOrderItem3);
             this.groupBoxItem3.Controls.Add(this.labelQuantity3);
             this.groupBoxItem3.Controls.Add(this.labelPrice3);
@@ -367,27 +389,31 @@
             this.buttonOrderItem3.TabIndex = 7;
             this.buttonOrderItem3.Text = "수박 주문";
             this.buttonOrderItem3.UseVisualStyleBackColor = true;
+            this.buttonOrderItem3.Click += new System.EventHandler(this.buttonOrderItem3_Click);
             // 
             // labelQuantity3
             // 
             this.labelQuantity3.AutoSize = true;
-            this.labelQuantity3.Location = new System.Drawing.Point(120, 28);
+            this.labelQuantity3.Location = new System.Drawing.Point(166, 28);
             this.labelQuantity3.Name = "labelQuantity3";
-            this.labelQuantity3.Size = new System.Drawing.Size(84, 12);
+            this.labelQuantity3.Size = new System.Drawing.Size(17, 12);
             this.labelQuantity3.TabIndex = 7;
-            this.labelQuantity3.Text = "labelQuantity3";
+            this.labelQuantity3.Text = "10";
             // 
             // labelPrice3
             // 
             this.labelPrice3.AutoSize = true;
             this.labelPrice3.Location = new System.Drawing.Point(6, 28);
             this.labelPrice3.Name = "labelPrice3";
-            this.labelPrice3.Size = new System.Drawing.Size(67, 12);
+            this.labelPrice3.Size = new System.Drawing.Size(35, 12);
             this.labelPrice3.TabIndex = 6;
-            this.labelPrice3.Text = "labelPrice3";
+            this.labelPrice3.Text = "18000";
             // 
             // groupBoxItem2
             // 
+            this.groupBoxItem2.Controls.Add(this.label8);
+            this.groupBoxItem2.Controls.Add(this.label5);
+            this.groupBoxItem2.Controls.Add(this.label2);
             this.groupBoxItem2.Controls.Add(this.buttonOrderItem2);
             this.groupBoxItem2.Controls.Add(this.labelQuantity2);
             this.groupBoxItem2.Controls.Add(this.labelPrice2);
@@ -406,27 +432,31 @@
             this.buttonOrderItem2.TabIndex = 6;
             this.buttonOrderItem2.Text = "참외 주문";
             this.buttonOrderItem2.UseVisualStyleBackColor = true;
+            this.buttonOrderItem2.Click += new System.EventHandler(this.buttonOrderItem2_Click);
             // 
             // labelQuantity2
             // 
             this.labelQuantity2.AutoSize = true;
-            this.labelQuantity2.Location = new System.Drawing.Point(120, 28);
+            this.labelQuantity2.Location = new System.Drawing.Point(166, 28);
             this.labelQuantity2.Name = "labelQuantity2";
-            this.labelQuantity2.Size = new System.Drawing.Size(84, 12);
+            this.labelQuantity2.Size = new System.Drawing.Size(17, 12);
             this.labelQuantity2.TabIndex = 6;
-            this.labelQuantity2.Text = "labelQuantity2";
+            this.labelQuantity2.Text = "10";
             // 
             // labelPrice2
             // 
             this.labelPrice2.AutoSize = true;
             this.labelPrice2.Location = new System.Drawing.Point(6, 28);
             this.labelPrice2.Name = "labelPrice2";
-            this.labelPrice2.Size = new System.Drawing.Size(67, 12);
+            this.labelPrice2.Size = new System.Drawing.Size(29, 12);
             this.labelPrice2.TabIndex = 5;
-            this.labelPrice2.Text = "labelPrice2";
+            this.labelPrice2.Text = "2500";
             // 
             // groupBoxItem1
             // 
+            this.groupBoxItem1.Controls.Add(this.label7);
+            this.groupBoxItem1.Controls.Add(this.label4);
+            this.groupBoxItem1.Controls.Add(this.label1);
             this.groupBoxItem1.Controls.Add(this.buttonOrderItem1);
             this.groupBoxItem1.Controls.Add(this.labelQuantity1);
             this.groupBoxItem1.Controls.Add(this.labelPrice1);
@@ -445,24 +475,142 @@
             this.buttonOrderItem1.TabIndex = 4;
             this.buttonOrderItem1.Text = "사과 주문";
             this.buttonOrderItem1.UseVisualStyleBackColor = true;
+            this.buttonOrderItem1.Click += new System.EventHandler(this.buttonOrderItem1_Click);
             // 
             // labelQuantity1
             // 
             this.labelQuantity1.AutoSize = true;
-            this.labelQuantity1.Location = new System.Drawing.Point(120, 28);
+            this.labelQuantity1.Location = new System.Drawing.Point(164, 28);
             this.labelQuantity1.Name = "labelQuantity1";
-            this.labelQuantity1.Size = new System.Drawing.Size(84, 12);
+            this.labelQuantity1.Size = new System.Drawing.Size(17, 12);
             this.labelQuantity1.TabIndex = 5;
-            this.labelQuantity1.Text = "labelQuantity1";
+            this.labelQuantity1.Text = "10";
             // 
             // labelPrice1
             // 
             this.labelPrice1.AutoSize = true;
             this.labelPrice1.Location = new System.Drawing.Point(6, 28);
             this.labelPrice1.Name = "labelPrice1";
-            this.labelPrice1.Size = new System.Drawing.Size(67, 12);
+            this.labelPrice1.Size = new System.Drawing.Size(29, 12);
             this.labelPrice1.TabIndex = 4;
-            this.labelPrice1.Text = "labelPrice1";
+            this.labelPrice1.Text = "2000";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(187, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 12);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "개";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(189, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 12);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "개";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(189, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 12);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "개";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(41, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(17, 12);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "원";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(41, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 12);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "원";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(47, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(17, 12);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "원";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(101, 28);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 12);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "남은 수량";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(103, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 12);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "남은 수량";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(103, 28);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 12);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "남은 수량";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(59, 149);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(17, 12);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "원";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(146, 17);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(17, 12);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "원";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(10, 134);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 12);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "고객 잔액";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(24, 17);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 12);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "관리자 잔액";
             // 
             // Chapter12_Testcode_T
             // 
@@ -534,5 +682,18 @@
         private System.Windows.Forms.Button buttonOrderItem1;
         private System.Windows.Forms.Label labelQuantity1;
         private System.Windows.Forms.Label labelPrice1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

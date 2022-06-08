@@ -404,6 +404,7 @@
             this.textBoxOderItem3.Name = "textBoxOderItem3";
             this.textBoxOderItem3.Size = new System.Drawing.Size(100, 21);
             this.textBoxOderItem3.TabIndex = 5;
+            this.textBoxOderItem3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxOderItem2
             // 
@@ -411,6 +412,7 @@
             this.textBoxOderItem2.Name = "textBoxOderItem2";
             this.textBoxOderItem2.Size = new System.Drawing.Size(100, 21);
             this.textBoxOderItem2.TabIndex = 4;
+            this.textBoxOderItem2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxOderItem1
             // 
@@ -418,6 +420,7 @@
             this.textBoxOderItem1.Name = "textBoxOderItem1";
             this.textBoxOderItem1.Size = new System.Drawing.Size(100, 21);
             this.textBoxOderItem1.TabIndex = 3;
+            this.textBoxOderItem1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelItem3
             // 
@@ -463,6 +466,7 @@
             this.textBoxTransactionDetail1.Name = "textBoxTransactionDetail1";
             this.textBoxTransactionDetail1.Size = new System.Drawing.Size(311, 151);
             this.textBoxTransactionDetail1.TabIndex = 11;
+            this.textBoxTransactionDetail1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelManagerBalance
             // 
