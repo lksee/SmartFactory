@@ -149,6 +149,7 @@
             this.buttonTotalMargin.TabIndex = 12;
             this.buttonTotalMargin.Text = "총 마진 보기";
             this.buttonTotalMargin.UseVisualStyleBackColor = true;
+            this.buttonTotalMargin.Click += new System.EventHandler(this.buttonTotalMargin_Click);
             // 
             // buttonItemMargin
             // 
@@ -158,10 +159,12 @@
             this.buttonItemMargin.TabIndex = 11;
             this.buttonItemMargin.Text = "개별 마진 보기";
             this.buttonItemMargin.UseVisualStyleBackColor = true;
+            this.buttonItemMargin.Click += new System.EventHandler(this.buttonItemMargin_Click);
             // 
             // buttonItemRadio1
             // 
             this.buttonItemRadio1.AutoSize = true;
+            this.buttonItemRadio1.Checked = true;
             this.buttonItemRadio1.Location = new System.Drawing.Point(8, 20);
             this.buttonItemRadio1.Name = "buttonItemRadio1";
             this.buttonItemRadio1.Size = new System.Drawing.Size(47, 16);
@@ -198,6 +201,7 @@
             this.buttonResetOrder.TabIndex = 10;
             this.buttonResetOrder.Text = "전체 삭제";
             this.buttonResetOrder.UseVisualStyleBackColor = true;
+            this.buttonResetOrder.Click += new System.EventHandler(this.buttonResetOrder_Click);
             // 
             // buttonPlaceAOrder
             // 
@@ -207,6 +211,7 @@
             this.buttonPlaceAOrder.TabIndex = 9;
             this.buttonPlaceAOrder.Text = "발주 입고";
             this.buttonPlaceAOrder.UseVisualStyleBackColor = true;
+            this.buttonPlaceAOrder.Click += new System.EventHandler(this.buttonPlaceAOrder_Click);
             // 
             // labelOrderItem3
             // 
@@ -346,6 +351,7 @@
             this.buttonCancelOrder.TabIndex = 7;
             this.buttonCancelOrder.Text = "주문 취소하기";
             this.buttonCancelOrder.UseVisualStyleBackColor = true;
+            this.buttonCancelOrder.Click += new System.EventHandler(this.buttonCancelOrder_Click);
             // 
             // buttonToTalPayment
             // 

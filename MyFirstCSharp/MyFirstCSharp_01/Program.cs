@@ -42,7 +42,8 @@ namespace MyFirstCSharp_01
             //Application.Run(new Chapter11_Middle_Exam_TestCode2());
             //Application.Run(new Chapter11_Middle_TestCode3());
             //Application.Run(new Chapter12_Exception_TryCatchStatements());
-            Application.Run(new Chapter12_TestCode());
+            //Application.Run(new Chapter12_TestCode());
+            Application.Run(new Chapter12_Testcode_T());
         } // 프로그램 실행 범위 끝
     }
 }

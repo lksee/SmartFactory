@@ -111,6 +111,11 @@ namespace MyFirstCSharp_01
         #region < 고객 주문 취소하기 >
         private void buttonCancelOrder_Click(object sender, EventArgs e)
         {
+            if (totalOrdersPayments == 0)
+            {
+                MessageBox.Show("취소할 내역이 없습니다.");
+                return;
+            }
             // 주문 취소하기
             totalOrdersPayments = 0;
 
@@ -128,6 +133,7 @@ namespace MyFirstCSharp_01
         private void buttonMakePayment_Click(object sender, EventArgs e)
         {
             // 결제하기
+            // 잔액 범위 내에서 주문 가능
             if (totalOrdersPayments <= clientBalance)
             {
                 // 총 주문액수만큼 고객 잔고에서 차감하고, 관리자 잔고에 증액한다.
