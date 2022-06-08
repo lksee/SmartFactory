@@ -272,15 +272,15 @@ namespace MyFirstCSharp_01
         {
             if (buttonItemRadio1.Checked)
             {
-                MessageBox.Show(Convert.ToString(MyDicMargin["사과"]));
+                MessageBox.Show($"사과의 마진은 {MyDicMargin["사과"]}원 입니다.");
             }
             else if (buttonItemRadio2.Checked)
             {
-                MessageBox.Show(Convert.ToString(MyDicMargin["참외"]));
+                MessageBox.Show($"참외의 마진은 {MyDicMargin["참외"]}원 입니다.");
             }
             else if (buttonItemRadio3.Checked)
             {
-                MessageBox.Show(Convert.ToString(MyDicMargin["수박"]));
+                MessageBox.Show($"수박의 마진은 {MyDicMargin["수박"]}원 입니다.");
             }
         }
 
