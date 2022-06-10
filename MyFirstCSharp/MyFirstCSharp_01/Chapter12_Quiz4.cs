@@ -18,6 +18,7 @@ namespace MyFirstCSharp_01
         {
             InitializeComponent();
 
+            // 레이블 텍스트 -> string[] -> int[]로 초기화.
             string[] sValues = labelValue.Text.Split(',');
             iValues = new int[sValues.Length];
             for (int i = 0; i < sValues.Length; i++)
@@ -28,24 +29,28 @@ namespace MyFirstCSharp_01
 
         private void buttonSortDesc_Click(object sender, EventArgs e)
         {
-            string sResults = "";
-            int[] iResults = new int[iValues.Length];
-
-            for (int i = 0; i < iResults.Length; i++)
+            // 삽입 정렬 구현.
+            for (int i = 0; i < iValues.Length - 1; i++)
             {
-                int iMax = 0;
-                foreach (int iValue in iValues)
+                try
                 {
-                    if (iResults.Contains(iValue)) continue;
-                    if (iMax < iValue)
+                    for (int j = i + 1; j > 0 && iValues[j - 1] < iValues[j]; j--)
                     {
-                        iMax = iValue;
+                        int _ = iValues[j-1];
+                        iValues[j - 1] = iValues[j];
+                        iValues[j] = _;
                     }
                 }
-                iResults[i] = iMax;
+                catch(Exception ex)
+                {
+                    MessageBox.Show($"{ex.Message}");
+                }
             }
 
-            foreach (int i in iResults)
+
+            // int[] -> string.
+            string sResults = "";
+            foreach (int i in iValues)
             {
                 sResults += $", {i}";
             }
