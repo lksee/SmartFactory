@@ -52,8 +52,11 @@ namespace MyFirstCSharp_01
             //Application.Run(new Chapter13_Enum());
             //Application.Run(new Chapter14_Properties());
             //Application.Run(new Test_Sum_Odd_Even());
-            Application.Run(new Test_String());
+            //Application.Run(new Test_String());
             //Application.Run(new Test_Array_RandomValues());
+            //Application.Run(new Chapter15_Exam01());
+            //Application.Run(new Chapter15_Exam02());
+            Application.Run(new Chapter15_Exam03());
         } // 프로그램 실행 범위 끝
     }
 }

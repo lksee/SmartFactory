@@ -269,6 +269,24 @@
     <Compile Include="Chapter14_Properties.Designer.cs">
       <DependentUpon>Chapter14_Properties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chapter15_Exam01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter15_Exam01.Designer.cs">
+      <DependentUpon>Chapter15_Exam01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter15_Exam02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter15_Exam02.Designer.cs">
+      <DependentUpon>Chapter15_Exam02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter15_Exam03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter15_Exam03.Designer.cs">
+      <DependentUpon>Chapter15_Exam03.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -402,6 +420,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chapter14_Properties.resx">
       <DependentUpon>Chapter14_Properties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter15_Exam01.resx">
+      <DependentUpon>Chapter15_Exam01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter15_Exam02.resx">
+      <DependentUpon>Chapter15_Exam02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter15_Exam03.resx">
+      <DependentUpon>Chapter15_Exam03.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
