@@ -25,14 +25,14 @@ namespace MainForms
     // WinFormApplication 강의의 목표.
     // C# .NETFramework에서 제공하는 기본 도구와 프로그래밍 문법을 사용하여 개발 솔루션의 프레임을 만들어보고
     // 시스템 개발 프레임 소스의 원리를 이해 및 구현하고 기능을 습득한다.
-    public partial class M01_Login : Form
+    public partial class M01_Login_N : Form
     {
         // SQL Server 커넥터 객체 생성.
         private SqlConnection _conn = null;
         // 로그인 실패 횟수 카운터
         private int _loginFail = 0;
 
-        public M01_Login()
+        public M01_Login_N()
         {
             InitializeComponent();
         }
@@ -69,7 +69,7 @@ namespace MainForms
                     // ID / PW 찾는 SQL 구문.
                     string sFindUserSQL = $"SELECT USR.USER_NAME" +
                                                $", USR.USER_PW " +
-                                               $", USR.NUM_OF_FAIL " +
+                                               $", ISNULL(USR.NUM_OF_FAIL) AS NUM_OF_FAIL " +
                                             $"FROM TB_USER USR " +
                                            $"WHERE USR.USER_ID = '{sLoginID}' ";
 
@@ -121,16 +121,13 @@ namespace MainForms
                         Commons.sLoginUserName = Convert.ToString(dtTemp.Rows[0]["USER_NAME"]);
                         MessageBox.Show($"{Commons.sLoginUserName} 님 반갑습니다.");
 
-                        // 로그인 성공 --> 클래스 Tag에 등록
-                        this.Tag = true;
-
                         this.Close();
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+
             }
             finally
             {
@@ -156,6 +153,14 @@ namespace MainForms
             m03.ShowDialog();
             //this.Show();
             this.Visible = true;
+        }
+
+        private void textBoxPW_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _doLogin();
+            }
         }
     }
 }

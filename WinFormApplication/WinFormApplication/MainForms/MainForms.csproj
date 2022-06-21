@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commons.cs" />
+    <Compile Include="M01_Login_N.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="M01_Login_N.Designer.cs">
+      <DependentUpon>M01_Login_N.cs</DependentUpon>
+    </Compile>
     <Compile Include="M01_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,13 +65,34 @@
     <Compile Include="M02_ChangePassword.Designer.cs">
       <DependentUpon>M02_ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="M03_passwordChang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="M03_passwordChang.Designer.cs">
+      <DependentUpon>M03_passwordChang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="M04_MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="M04_MainForm.Designer.cs">
+      <DependentUpon>M04_MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="M01_Login_N.resx">
+      <DependentUpon>M01_Login_N.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="M01_Login.resx">
       <DependentUpon>M01_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="M02_ChangePassword.resx">
       <DependentUpon>M02_ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M03_passwordChang.resx">
+      <DependentUpon>M03_passwordChang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M04_MainForm.resx">
+      <DependentUpon>M04_MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +102,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -88,6 +116,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtcExit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnSaveB.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
