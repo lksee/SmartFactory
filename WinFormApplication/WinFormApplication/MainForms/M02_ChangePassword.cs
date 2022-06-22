@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 // SQL Server 접속 클래스 클라이언트
 using System.Data.SqlClient;
+using Assambly;
 
 namespace MainForms
 {

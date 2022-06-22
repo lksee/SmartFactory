@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 // Thread 사용하기 위한 라이브러리
 using System.Threading;
+using Assambly;
+using FormList;
 
 namespace MainForms
 {
@@ -85,6 +87,14 @@ namespace MainForms
         {
             // 윈도우창 X 버튼 클릭.
             ApplicationExit();
+        }
+
+        private void M_Test_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            // DropDownItem -> 메뉴가 아래로 펼쳐질 때
+            // 메뉴 클릭
+            // 1. CS 파일을 직접 호출.
+            Form01_MDI_TEST form01 = new Form01_MDI_TEST();
         }
         #endregion
 

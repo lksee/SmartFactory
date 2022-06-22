@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 // SQL Server에 접속할 수 있는 클래스 라이브러리
 using System.Data.SqlClient;
+using Assambly;
 
 namespace MainForms
 {

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace MainForms
+namespace Assambly
 {
-    internal class Commons
+    public class Commons
     {
         // 공통 변수 설정.
         //public static string sLoginUserID = string.Empty; // 사용자 ID

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.testMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.M_Test = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonSearch = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonInsert = new System.Windows.Forms.ToolStripButton();
@@ -45,6 +45,7 @@
             this.toolStripStatusLabelUserName = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelNowDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Form01_MDI_TEST = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -53,18 +54,21 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testMenuToolStripMenuItem});
+            this.M_Test});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1038, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "Test Menu";
             // 
-            // testMenuToolStripMenuItem
+            // M_Test
             // 
-            this.testMenuToolStripMenuItem.Name = "testMenuToolStripMenuItem";
-            this.testMenuToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.testMenuToolStripMenuItem.Text = "Test Menu";
+            this.M_Test.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Form01_MDI_TEST});
+            this.M_Test.Name = "M_Test";
+            this.M_Test.Size = new System.Drawing.Size(75, 20);
+            this.M_Test.Text = "Test Menu";
+            this.M_Test.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.M_Test_DropDownItemClicked);
             // 
             // toolStrip1
             // 
@@ -201,6 +205,12 @@
             // 
             this.timer1.Interval = 1000;
             // 
+            // Form01_MDI_TEST
+            // 
+            this.Form01_MDI_TEST.Name = "Form01_MDI_TEST";
+            this.Form01_MDI_TEST.Size = new System.Drawing.Size(180, 22);
+            this.Form01_MDI_TEST.Text = "MDI 테스트 1";
+            // 
             // M04_MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -209,6 +219,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "M04_MainForm";
             this.Text = "EZ_Dev 1.0";
@@ -242,7 +253,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelEmptySpace;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelUserName;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelNowDate;
-        private System.Windows.Forms.ToolStripMenuItem testMenuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem M_Test;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripMenuItem Form01_MDI_TEST;
     }
 }

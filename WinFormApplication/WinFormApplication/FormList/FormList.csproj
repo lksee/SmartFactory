@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{627FD34E-3128-4953-9561-B3E2EB16E7FD}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>MainForms</RootNamespace>
-    <AssemblyName>MainForms</AssemblyName>
+    <ProjectGuid>{B2FDAC13-4DF2-447C-8CC7-9082EBF5524F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FormList</RootNamespace>
+    <AssemblyName>FormList</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,13 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assambly">
-      <HintPath>..\Assambly\bin\Debug\Assambly.dll</HintPath>
-    </Reference>
-    <Reference Include="FormList">
-      <HintPath>..\FormList\bin\Debug\FormList.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,53 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="M01_Login_N.cs">
+    <Compile Include="Form01_MDI_TEST.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="M01_Login_N.Designer.cs">
-      <DependentUpon>M01_Login_N.cs</DependentUpon>
+    <Compile Include="Form01_MDI_TEST.Designer.cs">
+      <DependentUpon>Form01_MDI_TEST.cs</DependentUpon>
     </Compile>
-    <Compile Include="M01_Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="M01_Login.Designer.cs">
-      <DependentUpon>M01_Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="M02_ChangePassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="M02_ChangePassword.Designer.cs">
-      <DependentUpon>M02_ChangePassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="M03_passwordChang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="M03_passwordChang.Designer.cs">
-      <DependentUpon>M03_passwordChang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="M04_MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="M04_MainForm.Designer.cs">
-      <DependentUpon>M04_MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="M01_Login_N.resx">
-      <DependentUpon>M01_Login_N.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M01_Login.resx">
-      <DependentUpon>M01_Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M02_ChangePassword.resx">
-      <DependentUpon>M02_ChangePassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M03_passwordChang.resx">
-      <DependentUpon>M03_passwordChang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M04_MainForm.resx">
-      <DependentUpon>M04_MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -107,7 +64,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -118,27 +74,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnSearch.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtcExit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnAdd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnClose.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnDelete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnSaveB.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
