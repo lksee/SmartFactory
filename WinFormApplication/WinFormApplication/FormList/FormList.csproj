@@ -49,13 +49,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form02_MDI_TEST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form02_MDI_TEST.Designer.cs">
+      <DependentUpon>Form02_MDI_TEST.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form01_MDI_TEST.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form01_MDI_TEST.Designer.cs">
       <DependentUpon>Form01_MDI_TEST.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form03_UserMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form03_UserMaster.Designer.cs">
+      <DependentUpon>Form03_UserMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form04_UserMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form04_UserMaster.Designer.cs">
+      <DependentUpon>Form04_UserMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form02_MDI_TEST.resx">
+      <DependentUpon>Form02_MDI_TEST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form01_MDI_TEST.resx">
+      <DependentUpon>Form01_MDI_TEST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form03_UserMaster.resx">
+      <DependentUpon>Form03_UserMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form04_UserMaster.resx">
+      <DependentUpon>Form04_UserMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -74,6 +104,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Assambly\Assambly.csproj">
+      <Project>{65973F7E-4905-4ECE-B27D-2A614D0DC297}</Project>
+      <Name>Assambly</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
