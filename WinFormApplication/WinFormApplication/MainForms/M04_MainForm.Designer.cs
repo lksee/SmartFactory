@@ -35,6 +35,7 @@
             this.Form02_MDI_TEST = new System.Windows.Forms.ToolStripMenuItem();
             this.기준정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Form03_UserMaster = new System.Windows.Forms.ToolStripMenuItem();
+            this.Form04_UserMaster = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonSearch = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonInsert = new System.Windows.Forms.ToolStripButton();
@@ -50,7 +51,6 @@
             this.toolStripStatusLabelNowDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MyTabControl = new Assambly.MyTabControl();
-            this.Form04_UserMaster = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -58,7 +58,6 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.M_Test,
@@ -106,6 +105,12 @@
             this.Form03_UserMaster.Name = "Form03_UserMaster";
             this.Form03_UserMaster.Size = new System.Drawing.Size(270, 34);
             this.Form03_UserMaster.Text = "사용자 관리";
+            // 
+            // Form04_UserMaster
+            // 
+            this.Form04_UserMaster.Name = "Form04_UserMaster";
+            this.Form04_UserMaster.Size = new System.Drawing.Size(270, 34);
+            this.Form04_UserMaster.Text = "사용자 관리2";
             // 
             // toolStrip1
             // 
@@ -259,12 +264,6 @@
             this.MyTabControl.SelectedIndex = 0;
             this.MyTabControl.Size = new System.Drawing.Size(1483, 638);
             this.MyTabControl.TabIndex = 3;
-            // 
-            // Form04_UserMaster
-            // 
-            this.Form04_UserMaster.Name = "Form04_UserMaster";
-            this.Form04_UserMaster.Size = new System.Drawing.Size(270, 34);
-            this.Form04_UserMaster.Text = "사용자 관리2";
             // 
             // M04_MainForm
             // 

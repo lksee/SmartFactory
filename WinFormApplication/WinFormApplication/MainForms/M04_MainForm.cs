@@ -24,15 +24,15 @@ namespace MainForms
         public M04_MainForm()
         {
             InitializeComponent();
-            M01_Login m01_Login = new M01_Login();
-            m01_Login.ShowDialog();
+            //M01_Login m01_Login = new M01_Login();
+            //m01_Login.ShowDialog();
 
-            // 호출했던 로그인 화면의 결과 Tag 값이 성공이 아니면 프로그램 종료.
-            if (Convert.ToBoolean(m01_Login.Tag) != true)
-            {
-                // 프로그램 강제 종료
-                Environment.Exit(0);
-            }
+            //// 호출했던 로그인 화면의 결과 Tag 값이 성공이 아니면 프로그램 종료.
+            //if (Convert.ToBoolean(m01_Login.Tag) != true)
+            //{
+            //    // 프로그램 강제 종료
+            //    Environment.Exit(0);
+            //}
         }
 
         private void M04_MainForm_Load(object sender, EventArgs e)

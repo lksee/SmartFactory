@@ -40,9 +40,10 @@
             // 
             this.labelID.AutoSize = true;
             this.labelID.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelID.Location = new System.Drawing.Point(99, 102);
+            this.labelID.Location = new System.Drawing.Point(141, 153);
+            this.labelID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(51, 15);
+            this.labelID.Size = new System.Drawing.Size(79, 25);
             this.labelID.TabIndex = 0;
             this.labelID.Text = "USER ID";
             // 
@@ -50,34 +51,39 @@
             // 
             this.labelPW.AutoSize = true;
             this.labelPW.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelPW.Location = new System.Drawing.Point(99, 129);
+            this.labelPW.Location = new System.Drawing.Point(141, 194);
+            this.labelPW.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPW.Name = "labelPW";
-            this.labelPW.Size = new System.Drawing.Size(72, 15);
+            this.labelPW.Size = new System.Drawing.Size(109, 25);
             this.labelPW.TabIndex = 1;
             this.labelPW.Text = "PASSWORD";
             // 
             // textBoxID
             // 
             this.textBoxID.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBoxID.Location = new System.Drawing.Point(177, 99);
+            this.textBoxID.Location = new System.Drawing.Point(253, 148);
+            this.textBoxID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(195, 23);
+            this.textBoxID.Size = new System.Drawing.Size(277, 31);
             this.textBoxID.TabIndex = 2;
             // 
             // textBoxPW
             // 
             this.textBoxPW.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBoxPW.Location = new System.Drawing.Point(177, 126);
+            this.textBoxPW.Location = new System.Drawing.Point(253, 189);
+            this.textBoxPW.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPW.Name = "textBoxPW";
-            this.textBoxPW.Size = new System.Drawing.Size(195, 23);
+            this.textBoxPW.PasswordChar = '*';
+            this.textBoxPW.Size = new System.Drawing.Size(277, 31);
             this.textBoxPW.TabIndex = 3;
             // 
             // buttonLogin
             // 
             this.buttonLogin.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonLogin.Location = new System.Drawing.Point(177, 153);
+            this.buttonLogin.Location = new System.Drawing.Point(253, 230);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(75, 39);
+            this.buttonLogin.Size = new System.Drawing.Size(107, 58);
             this.buttonLogin.TabIndex = 4;
             this.buttonLogin.Text = "로그인";
             this.buttonLogin.UseVisualStyleBackColor = true;
@@ -86,9 +92,10 @@
             // buttonChgPw
             // 
             this.buttonChgPw.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonChgPw.Location = new System.Drawing.Point(297, 153);
+            this.buttonChgPw.Location = new System.Drawing.Point(424, 230);
+            this.buttonChgPw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonChgPw.Name = "buttonChgPw";
-            this.buttonChgPw.Size = new System.Drawing.Size(75, 39);
+            this.buttonChgPw.Size = new System.Drawing.Size(107, 58);
             this.buttonChgPw.TabIndex = 5;
             this.buttonChgPw.Text = "비밀번호 변경";
             this.buttonChgPw.UseVisualStyleBackColor = true;
@@ -96,15 +103,16 @@
             // 
             // M01_Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 283);
+            this.ClientSize = new System.Drawing.Size(757, 424);
             this.Controls.Add(this.buttonChgPw);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPW);
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.labelPW);
             this.Controls.Add(this.labelID);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "M01_Login";
             this.Text = "LOGIN";
             this.ResumeLayout(false);

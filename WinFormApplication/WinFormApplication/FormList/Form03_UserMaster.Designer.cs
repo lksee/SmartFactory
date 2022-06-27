@@ -33,7 +33,7 @@
             // Form03_UserMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Form03_UserMaster";
             this.Text = "사용자 관리";

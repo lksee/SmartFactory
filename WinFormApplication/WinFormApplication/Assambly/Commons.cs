@@ -13,6 +13,9 @@ namespace Assambly
         // 공통 변수 설정.
         //public static string sLoginUserID = string.Empty; // 사용자 ID
         //public static string sLoginUserName = string.Empty; // 사용자 명
+
+        public static string DbPath = "Data Source=222.235.141.8;Initial Catalog = AppDev_SH;User Id = KFQS;Password = 1234;";
+
         public static string sLoginUserID
         {
             get;
