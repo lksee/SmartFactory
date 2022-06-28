@@ -96,22 +96,140 @@ namespace FormList
         /// </summary>
         public override void Delete()
         {
-            // 그리드에 표현된 행이 없을 경우 삭제할 필요 없음
+            // 그리드에 표현되어있는 행이 없을경우 에는 삭제 할 필요가 없다.
             if (dataGridView.Rows.Count == 0) return;
 
-            // 지금 선택한 행의 index를 찾기
-            int iSelectedIndex = dataGridView.CurrentCell.RowIndex;
+            // 현재 선택된 행의 정보를 받아온다. 
+            int iSelectIndex = dataGridView.CurrentRow.Index;
 
-            // dataGridView의 행과 컬럼의 모든 정보를 깡통 DataTable에 담는다.
-            DataTable _dt = (DataTable)dataGridView.DataSource;
+            // 선택한 행의 사용자 ID 를 받아온다.
+            string sUserid = Convert.ToString(dataGridView.Rows[iSelectIndex].Cells["USERID"].Value);
 
-            // 데이터테이블의 행을 삭제한다.
-            _dt.Rows[iSelectedIndex].Delete();
+            // 그리드의 데이터를 데이터테이블에 담는다.
+            DataTable dtTemp = (DataTable)dataGridView.DataSource;
+
+            // 추가 버튼을 통하여 신규로 추가 된 행의 삭제일 경우 그행 자체를 삭제한다. 
+            if (sUserid == "") dtTemp.Rows.RemoveAt(iSelectIndex);
+            else
+            {
+                // 데이터 테이블 행의 수 만큼 반복
+                for (int i = 0; i < dtTemp.Rows.Count; i++)
+                {
+                    // 데이터 테이블의 행이 삭제 된 상태일 경우 continue
+                    if (dtTemp.Rows[i].RowState == DataRowState.Deleted) continue;
+
+                    // 데이터 테이블의 사용자 id 가 그리드에서 선택한 사용자 ID 와 같을경우
+                    if (sUserid == Convert.ToString(dtTemp.Rows[i]["USERID"]))
+                    {
+                        // 데이터 테이블에서 삭제행 처리 (행 자체는 삭제 되지 않음.)
+                        dtTemp.Rows[i].Delete();
+                    }
+                }
+            }
         }
 
+        /// <summary>
+        /// 사용자 내역 갱신(삽입, 삭제, 수정된 행을 DB에 반영
+        /// </summary>
         public override void Save()
         {
-            
+            try
+            {
+                // 데이터베이스 접속 여부 확인.
+                if (!_connDB()) return;
+
+                // 트랜잭션 선언(트랜잭션 명은 임의 설정 가능)
+                _tran = _conn.BeginTransaction("MyTran");
+
+                // 1. INSERT, DELETE, UPDATE 명령 전달 SqlCommand 클래스 선언.
+                _cmd = new SqlCommand();
+
+                // 2. Command에 트랜잭션 맵핑
+                _cmd.Transaction = _tran;
+
+                // 3. 접속정보 등록.
+                _cmd.Connection = _conn;
+
+                // 4. 프로시져 형태로 호출하겠다는 선언.
+                _cmd.CommandType = CommandType.StoredProcedure;
+                
+                // 파라미터 누적 방지 초기화.
+                _cmd.Parameters.Clear();
+                
+                // Grid에서 데이터의 변화가 있는 행만 추출
+                DataTable _dt = ((DataTable)dataGridView.DataSource).GetChanges();
+
+                // 만약에 변경된 행이 없다면 return;
+                if (_dt is null) return;
+                // if (_dt.Rows.Count == 0) return; // null 반환 시 error
+
+                foreach (DataRow drRow in _dt.Rows)
+                {
+                    // 추출된 행의 상태 체크.
+                    switch (drRow.RowState)
+                    {
+                        // 행의 상태가 삭제 됐을 경우
+                        case DataRowState.Deleted:
+                            drRow.RejectChanges(); // 지워진 행의 데이터 복구.
+                            _cmd.CommandText = "13SP_USERMASTER_D";
+                            // USERID라는 이름으로 파라미터에 drRow["USERID"] 데이터를 보낸다.
+                            _cmd.Parameters.AddWithValue("USERID", drRow["USERID"]);
+
+                            _cmd.ExecuteNonQuery();
+                            break;
+
+                        // 행의 상태가 추가 됐을 경우
+                        case DataRowState.Added:
+                            // 사용자 ID 입력 여부 Validation 체크
+                            if (Convert.ToString(drRow["USERID"]) == "")
+                            {
+                                throw new Exception("사용자 ID를 입력하지 않았습니다.");
+                            }
+
+                            _cmd.CommandText = "13SP_USERMASTER_I";
+                            _cmd.Parameters.AddWithValue("USERID",   drRow["USERID"]);
+                            _cmd.Parameters.AddWithValue("USERNAME", drRow["USERNAME"]);
+                            _cmd.Parameters.AddWithValue("PW",       drRow["PW"]);
+                            _cmd.Parameters.AddWithValue("DEPTCODE", drRow["DEPTCODE"]);
+                            _cmd.Parameters.AddWithValue("MAKER",    Commons.sLoginUserID);
+
+                            _cmd.ExecuteNonQuery();
+
+                            break;
+
+                        // 행의 상태가 수정 됐을 경우
+                        case DataRowState.Modified:
+                            if (Convert.ToString(drRow["USERID"]) == "")
+                            {
+                                throw new Exception("사용자 ID를 입력하지 않았습니다.");
+                            }
+                            _cmd.CommandText = "13SP_USERMASTER_U";
+                            _cmd.Parameters.AddWithValue("USERID",   drRow["USERID"]);
+                            _cmd.Parameters.AddWithValue("USERNAME", drRow["USERNAME"]);
+                            _cmd.Parameters.AddWithValue("PW",       drRow["PW"]);
+                            _cmd.Parameters.AddWithValue("PW_F_CNT", drRow["PW_F_CNT"]);
+                            _cmd.Parameters.AddWithValue("DEPTCODE", drRow["DEPTCODE"]);
+                            _cmd.Parameters.AddWithValue("EDITOR",   Commons.sLoginUserID);
+
+                            _cmd.ExecuteNonQuery();
+
+                            break;
+                    }
+                }
+
+                _tran.Commit();
+                MessageBox.Show("정상적으로 데이터 등록을 완료하였습니다.");
+
+            }
+            catch (Exception e)
+            {
+                _tran.Rollback();
+                MessageBox.Show("등록 중 오류가 발생했습니다. " + e.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
         }
 
         /// <summary>

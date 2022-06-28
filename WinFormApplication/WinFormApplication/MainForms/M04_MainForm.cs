@@ -24,15 +24,17 @@ namespace MainForms
         public M04_MainForm()
         {
             InitializeComponent();
-            //M01_Login m01_Login = new M01_Login();
-            //m01_Login.ShowDialog();
+            M01_Login m01_Login = new M01_Login();
+            m01_Login.ShowDialog();
 
-            //// 호출했던 로그인 화면의 결과 Tag 값이 성공이 아니면 프로그램 종료.
-            //if (Convert.ToBoolean(m01_Login.Tag) != true)
-            //{
-            //    // 프로그램 강제 종료
-            //    Environment.Exit(0);
-            //}
+            // 호출했던 로그인 화면의 결과 Tag 값이 성공이 아니면 프로그램 종료.
+            if (Convert.ToBoolean(m01_Login.Tag) != true)
+            {
+                // 프로그램 강제 종료
+                Environment.Exit(0);
+            }
+
+            toolStripStatusLabelUserName.Text = Commons.sLoginUserName;
         }
 
         private void M04_MainForm_Load(object sender, EventArgs e)
@@ -143,6 +145,8 @@ namespace MainForms
 
             // 탭 페이지에 폼을 추가하여 오픈한다.
             MyTabControl.AddFrom(FormMdi);
+
+            toolStripStatusLabelFormName.Text = MyTabControl.SelectedTab.Text;
             #endregion
         }
 
@@ -197,6 +201,21 @@ namespace MainForms
             }
         }
         #endregion
+
+        private void MyTabControl_Selected(object sender, TabControlEventArgs e)
+        {
+            if (MyTabControl.TabPages.Count == 0)
+            {
+                toolStripStatusLabelFormName.Text = "Form Name";
+                return;
+            }
+            toolStripStatusLabelFormName.Text = MyTabControl.SelectedTab.Text;
+        }
+
+        private void MyTabControl_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+
+        }
 
         //private void timer1_Tick(object sender, EventArgs e)
         //{

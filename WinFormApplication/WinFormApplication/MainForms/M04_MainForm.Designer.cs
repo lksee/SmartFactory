@@ -51,6 +51,7 @@
             this.toolStripStatusLabelNowDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MyTabControl = new Assambly.MyTabControl();
+            this.Form05_Standard = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -94,7 +95,8 @@
             // 
             this.기준정보ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Form03_UserMaster,
-            this.Form04_UserMaster});
+            this.Form04_UserMaster,
+            this.Form05_Standard});
             this.기준정보ToolStripMenuItem.Name = "기준정보ToolStripMenuItem";
             this.기준정보ToolStripMenuItem.Size = new System.Drawing.Size(106, 29);
             this.기준정보ToolStripMenuItem.Text = "기준 정보";
@@ -264,6 +266,13 @@
             this.MyTabControl.SelectedIndex = 0;
             this.MyTabControl.Size = new System.Drawing.Size(1483, 638);
             this.MyTabControl.TabIndex = 3;
+            this.MyTabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.MyTabControl_Selected);
+            // 
+            // Form05_Standard
+            // 
+            this.Form05_Standard.Name = "Form05_Standard";
+            this.Form05_Standard.Size = new System.Drawing.Size(270, 34);
+            this.Form05_Standard.Text = "공통코드 마스터";
             // 
             // M04_MainForm
             // 
@@ -316,5 +325,6 @@
         private System.Windows.Forms.ToolStripMenuItem 기준정보ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Form03_UserMaster;
         private System.Windows.Forms.ToolStripMenuItem Form04_UserMaster;
+        private System.Windows.Forms.ToolStripMenuItem Form05_Standard;
     }
 }

@@ -73,6 +73,12 @@
     <Compile Include="Form04_UserMaster.Designer.cs">
       <DependentUpon>Form04_UserMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form05_Standard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form05_Standard.Designer.cs">
+      <DependentUpon>Form05_Standard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form02_MDI_TEST.resx">
       <DependentUpon>Form02_MDI_TEST.cs</DependentUpon>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form04_UserMaster.resx">
       <DependentUpon>Form04_UserMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form05_Standard.resx">
+      <DependentUpon>Form05_Standard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

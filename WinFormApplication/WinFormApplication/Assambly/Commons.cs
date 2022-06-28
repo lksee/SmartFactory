@@ -16,16 +16,16 @@ namespace Assambly
 
         public static string DbPath = "Data Source=222.235.141.8;Initial Catalog = AppDev_SH;User Id = KFQS;Password = 1234;";
 
-        public static string sLoginUserID
-        {
-            get;
-            set;
-        }
+        public static string sLoginUserID = "admin";
+        //{
+        //    get;
+        //    set;
+        //}
 
-        public static string sLoginUserName
-        {
-            get; set;
-        }
+        public static string sLoginUserName = "admin";
+        //{
+        //    get; set;
+        //}
 
         private static string getconnectionString()
         {
