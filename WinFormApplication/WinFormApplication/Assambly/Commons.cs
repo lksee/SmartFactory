@@ -35,6 +35,12 @@ namespace Assambly
             string user = "Uid=sa;";
             string pass = "Pwd = sqlserver12!@;";
 
+            //string host = "Server=222.235.141.8;";
+            //string port = "";
+            //string db = "database=AppDev_SH;";
+            //string user = "Uid=KFQS;";
+            //string pass = "Pwd = 1234;";
+
             string conString = $"{host}{port}{db}{user}{pass}";
 
             return conString;
