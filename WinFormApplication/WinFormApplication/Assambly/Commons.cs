@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Assambly
 {
@@ -14,7 +15,7 @@ namespace Assambly
         //public static string sLoginUserID = string.Empty; // 사용자 ID
         //public static string sLoginUserName = string.Empty; // 사용자 명
 
-        public static string DbPath = "Data Source=222.235.141.8;Initial Catalog = AppDev_SH;User Id = KFQS;Password = 1234;";
+        public static string DbPath = File.ReadAllText($"{Application.StartupPath}\\dbinfo.txt");
 
         public static string sLoginUserID = "admin";
         //{
@@ -29,19 +30,8 @@ namespace Assambly
 
         private static string getconnectionString()
         {
-            string host = "Server=localhost;";
-            string port = "";
-            string db = "database=AppDev;";
-            string user = "Uid=sa;";
-            string pass = "Pwd = sqlserver12!@;";
-
-            //string host = "Server=222.235.141.8;";
-            //string port = "";
-            //string db = "database=AppDev_SH;";
-            //string user = "Uid=KFQS;";
-            //string pass = "Pwd = 1234;";
-
-            string conString = $"{host}{port}{db}{user}{pass}";
+            string path = $"{Application.StartupPath}\\dbinfo2.txt";
+            string conString = File.ReadAllText(path);
 
             return conString;
         }

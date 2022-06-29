@@ -1,5 +1,6 @@
 ﻿#region <USING AREA>
 using System;
+using System.IO;
 using System.Configuration;
 using System.Net;
 using System.Data;
@@ -61,7 +62,14 @@ namespace KFQS_MES_2022
             string ConnStr = string.Empty;
             if (appConfig.AppSettings.Settings["PLACE"].Value.ToString() == "DEV") // 개발 PC
             {
-                ConnStr = @"Data Source=222.235.141.8; Initial Catalog=DC_EDU_SH;User ID=kfqs;Password=1234";
+                try
+                {
+                    ConnStr = File.ReadAllText($"{Application.StartupPath}\\dbinfo.txt");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"{Application.StartupPath}\\dbinfo.txt 데이터베이스 접속 정보 파일을 찾을 수 없습니다.\r\n{ex.ToString()}");
+                }
                 Configuration appConfig1 = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 appConfig1.ConnectionStrings.ConnectionStrings["ConnectionString"].ConnectionString = ConnStr;
                 appConfig1.Save();
