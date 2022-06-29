@@ -1,5 +1,8 @@
 ﻿using System;
+<<<<<<< HEAD
 using System.IO;
+=======
+>>>>>>> d6ba712b6df1c833a7469dc02329914eb01d8b93
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +17,7 @@ namespace CSPostgreSQL_SMART_CRUD_V1
     {
         private static string getconnectionString()
         {
+<<<<<<< HEAD
             string conString = string.Empty;
             try
             {
@@ -31,6 +35,15 @@ namespace CSPostgreSQL_SMART_CRUD_V1
             //string pass = "Password=;";
 
             //string conString = $"{host}{port}{db}{user}{pass}";
+=======
+            string host = "Host=localhost;";
+            string port = "Port=5432;";
+            string db   = "Database=test;";
+            string user = "Username=postgres;";
+            string pass = "Password=postgres12!@;";
+
+            string conString = $"{host}{port}{db}{user}{pass}";
+>>>>>>> d6ba712b6df1c833a7469dc02329914eb01d8b93
 
             return conString;
         }

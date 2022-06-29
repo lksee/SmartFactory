@@ -1,5 +1,8 @@
 ﻿using System;
+<<<<<<< HEAD
 using System.IO;
+=======
+>>>>>>> d6ba712b6df1c833a7469dc02329914eb01d8b93
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +17,18 @@ namespace PracForm
     {
         private static string getconnectionString()
         {
+<<<<<<< HEAD
             string conString = File.ReadAllText($"{Application.StartupPath}\\dbinfo.txt");
+=======
+            string host = "Server=localhost;";
+            string port = "";
+            string db = "database=AppDev;";
+            string user = "Uid=sa;";
+            string pass = "Pwd = sqlserver12!@;";
+
+            string conString = $"{host}{port}{db}{user}{pass}";
+
+>>>>>>> d6ba712b6df1c833a7469dc02329914eb01d8b93
             return conString;
         }
 
