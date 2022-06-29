@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1635CEE0-4159-4E44-B0DD-14059129765D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MyFirstCSharp_01</RootNamespace>
+    <AssemblyName>MyFirstCSharp_01</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chapter02_DataType.cs" />
+    <Compile Include="Chapter03_Class.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter03_Class.Designer.cs">
+      <DependentUpon>Chapter03_Class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter03_Class_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter03_Class_Test.Designer.cs">
+      <DependentUpon>Chapter03_Class_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter03_Static_Const.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter03_Static_Const.Designer.cs">
+      <DependentUpon>Chapter03_Static_Const.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter04_DataChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter04_DataChange.Designer.cs">
+      <DependentUpon>Chapter04_DataChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter05_practice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter05_practice.Designer.cs">
+      <DependentUpon>Chapter05_practice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter05_StringChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter05_StringChange.Designer.cs">
+      <DependentUpon>Chapter05_StringChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter05_StringFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter05_StringFind.Designer.cs">
+      <DependentUpon>Chapter05_StringFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter05_StringSplit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter05_StringSplit.Designer.cs">
+      <DependentUpon>Chapter05_StringSplit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter06_Null.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter06_Null.Designer.cs">
+      <DependentUpon>Chapter06_Null.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter07_Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter07_Operator.Designer.cs">
+      <DependentUpon>Chapter07_Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter08_Method_Return.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter08_Method_Return.Designer.cs">
+      <DependentUpon>Chapter08_Method_Return.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter09_If_BranchingStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter09_If_BranchingStatement.Designer.cs">
+      <DependentUpon>Chapter09_If_BranchingStatement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter09_If_BranchingStatement_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter09_If_BranchingStatement_Test.Designer.cs">
+      <DependentUpon>Chapter09_If_BranchingStatement_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter09_Switch_BranchingStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter09_Switch_BranchingStatement.Designer.cs">
+      <DependentUpon>Chapter09_Switch_BranchingStatement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter09_Switch_BranchingStatement_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter09_Switch_BranchingStatement_Test.Designer.cs">
+      <DependentUpon>Chapter09_Switch_BranchingStatement_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter10_Loop01_For.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter10_Loop01_For.Designer.cs">
+      <DependentUpon>Chapter10_Loop01_For.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter10_Loop02_While.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter10_Loop02_While.Designer.cs">
+      <DependentUpon>Chapter10_Loop02_While.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter10_Loop03_foreach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter10_Loop03_foreach.Designer.cs">
+      <DependentUpon>Chapter10_Loop03_foreach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter10_Loop_For_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter10_Loop_For_Test.Designer.cs">
+      <DependentUpon>Chapter10_Loop_For_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter10_Loop_For_Test2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter10_Loop_For_Test2.Designer.cs">
+      <DependentUpon>Chapter10_Loop_For_Test2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter11_Array.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter11_Array.Designer.cs">
+      <DependentUpon>Chapter11_Array.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter11_Array_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter11_Array_Test.Designer.cs">
+      <DependentUpon>Chapter11_Array_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter11_Array_Test2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter11_Array_Test2.Designer.cs">
+      <DependentUpon>Chapter11_Array_Test2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter11_Middle_Exam_TestCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter11_Middle_Exam_TestCode.Designer.cs">
+      <DependentUpon>Chapter11_Middle_Exam_TestCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter11_Middle_Exam_TestCode2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter11_Middle_Exam_TestCode2.Designer.cs">
+      <DependentUpon>Chapter11_Middle_Exam_TestCode2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter11_Middle_TestCode3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter11_Middle_TestCode3.Designer.cs">
+      <DependentUpon>Chapter11_Middle_TestCode3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter11_Middle_TestCode4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter11_Middle_TestCode4.Designer.cs">
+      <DependentUpon>Chapter11_Middle_TestCode4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter12_Exception_TryCatchStatements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter12_Exception_TryCatchStatements.Designer.cs">
+      <DependentUpon>Chapter12_Exception_TryCatchStatements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter12_Quiz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter12_Quiz.Designer.cs">
+      <DependentUpon>Chapter12_Quiz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter12_Quiz2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter12_Quiz2.Designer.cs">
+      <DependentUpon>Chapter12_Quiz2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter12_Quiz3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter12_Quiz3.Designer.cs">
+      <DependentUpon>Chapter12_Quiz3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter12_Quiz4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter12_Quiz4.Designer.cs">
+      <DependentUpon>Chapter12_Quiz4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter12_Quiz_T.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter12_Quiz_T.Designer.cs">
+      <DependentUpon>Chapter12_Quiz_T.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter12_TestCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter12_TestCode.Designer.cs">
+      <DependentUpon>Chapter12_TestCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter12_Testcode_T.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter12_Testcode_T.Designer.cs">
+      <DependentUpon>Chapter12_Testcode_T.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter13_Enum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter13_Enum.Designer.cs">
+      <DependentUpon>Chapter13_Enum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter14_Properties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter14_Properties.Designer.cs">
+      <DependentUpon>Chapter14_Properties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter15_Exam01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter15_Exam01.Designer.cs">
+      <DependentUpon>Chapter15_Exam01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter15_Exam02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter15_Exam02.Designer.cs">
+      <DependentUpon>Chapter15_Exam02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter15_Exam03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter15_Exam03.Designer.cs">
+      <DependentUpon>Chapter15_Exam03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test_Array_RandomValues.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Array_RandomValues.Designer.cs">
+      <DependentUpon>Test_Array_RandomValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test_String.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_String.Designer.cs">
+      <DependentUpon>Test_String.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test_Sum_Odd_Even.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Sum_Odd_Even.Designer.cs">
+      <DependentUpon>Test_Sum_Odd_Even.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Chapter03_Class.resx">
+      <DependentUpon>Chapter03_Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter03_Class_Test.resx">
+      <DependentUpon>Chapter03_Class_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter03_Static_Const.resx">
+      <DependentUpon>Chapter03_Static_Const.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter04_DataChange.resx">
+      <DependentUpon>Chapter04_DataChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter05_practice.resx">
+      <DependentUpon>Chapter05_practice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter05_StringChange.resx">
+      <DependentUpon>Chapter05_StringChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter05_StringFind.resx">
+      <DependentUpon>Chapter05_StringFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter05_StringSplit.resx">
+      <DependentUpon>Chapter05_StringSplit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter06_Null.resx">
+      <DependentUpon>Chapter06_Null.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter07_Operator.resx">
+      <DependentUpon>Chapter07_Operator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter08_Method_Return.resx">
+      <DependentUpon>Chapter08_Method_Return.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter09_If_BranchingStatement.resx">
+      <DependentUpon>Chapter09_If_BranchingStatement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter09_If_BranchingStatement_Test.resx">
+      <DependentUpon>Chapter09_If_BranchingStatement_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter09_Switch_BranchingStatement.resx">
+      <DependentUpon>Chapter09_Switch_BranchingStatement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter09_Switch_BranchingStatement_Test.resx">
+      <DependentUpon>Chapter09_Switch_BranchingStatement_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter10_Loop01_For.resx">
+      <DependentUpon>Chapter10_Loop01_For.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter10_Loop02_While.resx">
+      <DependentUpon>Chapter10_Loop02_While.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter10_Loop03_foreach.resx">
+      <DependentUpon>Chapter10_Loop03_foreach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter10_Loop_For_Test.resx">
+      <DependentUpon>Chapter10_Loop_For_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter10_Loop_For_Test2.resx">
+      <DependentUpon>Chapter10_Loop_For_Test2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter11_Array.resx">
+      <DependentUpon>Chapter11_Array.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter11_Array_Test.resx">
+      <DependentUpon>Chapter11_Array_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter11_Array_Test2.resx">
+      <DependentUpon>Chapter11_Array_Test2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter11_Middle_Exam_TestCode.resx">
+      <DependentUpon>Chapter11_Middle_Exam_TestCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter11_Middle_Exam_TestCode2.resx">
+      <DependentUpon>Chapter11_Middle_Exam_TestCode2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter11_Middle_TestCode3.resx">
+      <DependentUpon>Chapter11_Middle_TestCode3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter11_Middle_TestCode4.resx">
+      <DependentUpon>Chapter11_Middle_TestCode4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter12_Exception_TryCatchStatements.resx">
+      <DependentUpon>Chapter12_Exception_TryCatchStatements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter12_Quiz.resx">
+      <DependentUpon>Chapter12_Quiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter12_Quiz2.resx">
+      <DependentUpon>Chapter12_Quiz2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter12_Quiz3.resx">
+      <DependentUpon>Chapter12_Quiz3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter12_Quiz4.resx">
+      <DependentUpon>Chapter12_Quiz4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter12_Quiz_T.resx">
+      <DependentUpon>Chapter12_Quiz_T.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter12_TestCode.resx">
+      <DependentUpon>Chapter12_TestCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter12_Testcode_T.resx">
+      <DependentUpon>Chapter12_Testcode_T.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter14_Properties.resx">
+      <DependentUpon>Chapter14_Properties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter15_Exam01.resx">
+      <DependentUpon>Chapter15_Exam01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter15_Exam02.resx">
+      <DependentUpon>Chapter15_Exam02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter15_Exam03.resx">
+      <DependentUpon>Chapter15_Exam03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Test_Array_RandomValues.resx">
+      <DependentUpon>Test_Array_RandomValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_String.resx">
+      <DependentUpon>Test_String.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Sum_Odd_Even.resx">
+      <DependentUpon>Test_Sum_Odd_Even.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
