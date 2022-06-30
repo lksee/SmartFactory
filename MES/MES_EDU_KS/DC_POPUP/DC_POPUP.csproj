@@ -45,7 +45,7 @@
     <Reference Include="DataMatrix.net">
       <HintPath>..\KFQS_MES_2022\DLL\DataMatrix.net.dll</HintPath>
     </Reference>
-    <Reference Include="DC00_assm, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="DC00_assm, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\KFQS_MES_2022\bin\Debug\DC00_assm.dll</HintPath>
     </Reference>

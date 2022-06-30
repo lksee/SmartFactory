@@ -12,12 +12,12 @@ using DC00_PuMan;
 namespace KFQS_Form
 {
     /// <summary>
-    /// Form ID   : BM_WorkerMaster
-    /// Form Name : 작업자 마스터
-    /// Date      : 2022-06-29
+    /// Form ID   : BM_StopListMaster
+    /// Form Name : 비가동 항목 관리 마스터
+    /// Date      : 2022-06-30
     /// Maker     : 이기수
     /// </summary>
-    public partial class BM_WorkerMaster : DC00_WinForm.BaseMDIChildForm
+    public partial class BM_StopListMaster : DC00_WinForm.BaseMDIChildForm
     {
         #region < Member Area >
         DataTable dtTemp = new DataTable();
@@ -26,24 +26,19 @@ namespace KFQS_Form
 
         #endregion
 
-        public BM_WorkerMaster()
+        public BM_StopListMaster()
         {
             InitializeComponent();
         }
 
-        private void BM_WorkerMaster_Load(object sender, EventArgs e)
+        private void BM_StopListMaster_Load(object sender, EventArgs e)
         {
             // Grid 세팅.
             _GridUtil.InitializeGrid(this.grid1, false, true, false, "", false);
             _GridUtil.InitColumnUltraGrid(grid1, "PLANTCODE",  "공장",     true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, true);
-            _GridUtil.InitColumnUltraGrid(grid1, "WORKERID",   "작업자ID", true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, true);
-            _GridUtil.InitColumnUltraGrid(grid1, "WORKERNAME", "작업자명", true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, true);
-            _GridUtil.InitColumnUltraGrid(grid1, "BANCODE",    "작업반",   true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, true);
-            _GridUtil.InitColumnUltraGrid(grid1, "GRPID",      "그룹",     true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, true);
-            _GridUtil.InitColumnUltraGrid(grid1, "DEPTCODE",   "부서",     true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, true);
-            _GridUtil.InitColumnUltraGrid(grid1, "PHONENO",    "연락처",   true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, true);
-            _GridUtil.InitColumnUltraGrid(grid1, "INDATE",     "입사일",   true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, true);
-            _GridUtil.InitColumnUltraGrid(grid1, "OUTDATE",    "퇴사일",   true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, true);
+            _GridUtil.InitColumnUltraGrid(grid1, "STOPCODE",   "비가동 코드", true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, true);
+            _GridUtil.InitColumnUltraGrid(grid1, "STOPNAME",   "비가동 명", true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, true);
+            _GridUtil.InitColumnUltraGrid(grid1, "REMARK",     "비고",   true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, true);
             _GridUtil.InitColumnUltraGrid(grid1, "USEFLAG",    "사용여부", true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, true);
             _GridUtil.InitColumnUltraGrid(grid1, "MAKER",      "생성자",   true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, false);
             _GridUtil.InitColumnUltraGrid(grid1, "MAKEDATE",   "생성일자", true, GridColDataType_emu.VarChar, 130, 100, Infragistics.Win.HAlign.Left, true, false);
@@ -61,24 +56,12 @@ namespace KFQS_Form
             // 그리드의 컬럼에 받아온 데이터를 콤보박스 형식으로 세팅한다.
             UltraGridUtil.SetComboUltraGrid(grid1, "PLANTCODE", dtTemp, "CODE_ID", "CODE_NAME");
 
-            // 작업반
-            dtTemp = Common.StandardCODE("BANCODE");
-            Common.FillComboboxMaster(this.cboBanCode_H, dtTemp, dtTemp.Columns["CODE_ID"].ColumnName, dtTemp.Columns["CODE_NAME"].ColumnName, "ALL", "");
-            UltraGridUtil.SetComboUltraGrid(grid1, "BANCODE", dtTemp, "CODE_ID", "CODE_NAME");
-
             // 사용여부
             dtTemp = Common.StandardCODE("USEFLAG");
             Common.FillComboboxMaster(this.cboUseFlag_H, dtTemp, dtTemp.Columns["CODE_ID"].ColumnName, dtTemp.Columns["CODE_NAME"].ColumnName, "ALL", "");
             UltraGridUtil.SetComboUltraGrid(grid1, "USEFLAG", dtTemp, "CODE_ID", "CODE_NAME");
             #endregion
 
-            // 그룹
-            dtTemp = Common.StandardCODE("GRPID");
-            UltraGridUtil.SetComboUltraGrid(grid1, "GRPID", dtTemp, "CODE_ID", "CODE_NAME");
-
-            // 부서
-            dtTemp = Common.StandardCODE("DEPTCODE");
-            UltraGridUtil.SetComboUltraGrid(grid1, "DEPTCODE", dtTemp, "CODE_ID", "CODE_NAME");
 
             cboPlantCode_H.Value = sPlantCode;
         }
@@ -93,17 +76,15 @@ namespace KFQS_Form
             try
             {
                 string sPlantCode_ = Convert.ToString(cboPlantCode_H.Value);  // 공장
-                string sBanCode    = Convert.ToString(cboBanCode_H.Value);    // 작업반
-                string sWorkerID   = Convert.ToString(txtWorkerID_H.Value);   // 작업자ID
-                string sWorkerName = Convert.ToString(txtWorkerName_H.Value); // 작업자명
+                string sStopCode   = Convert.ToString(txtStopCode_H.Value);   // 작업자ID
+                string sStopName   = Convert.ToString(txtStopName_H.Value); // 작업자명
                 string sUseFlag    = Convert.ToString(cboUseFlag_H.Value);    // 사용여부
 
-                dtTemp = helper.FillTable("13BM_WorkerMaster_S", CommandType.StoredProcedure
-                                          , helper.CreateParameter("PLANTCODE",   sPlantCode_, DbType.String, ParameterDirection.Input)
-                                          , helper.CreateParameter("BANCODE",     sBanCode,    DbType.String, ParameterDirection.Input)
-                                          , helper.CreateParameter("WORKERID",    sWorkerID,   DbType.String, ParameterDirection.Input)
-                                          , helper.CreateParameter("WORKDERNAME", sWorkerName, DbType.String, ParameterDirection.Input)
-                                          , helper.CreateParameter("USEFLAG",     sUseFlag,    DbType.String, ParameterDirection.Input)
+                dtTemp = helper.FillTable("13BM_StopListMaster_S", CommandType.StoredProcedure
+                                          , helper.CreateParameter("PLANTCODE",   sPlantCode_)
+                                          , helper.CreateParameter("STOPCODE",    sStopCode)
+                                          , helper.CreateParameter("STOPNAME",    sStopName)
+                                          , helper.CreateParameter("USEFLAG",     sUseFlag)
                                           );
                 
                 // 받아온 데이터를 그리드에 매핑
@@ -136,7 +117,6 @@ namespace KFQS_Form
             this.grid1.InsertRow();
             // 생성된 행에 디폴트 데이터를 입력한다.
             this.grid1.ActiveRow.Cells["PLANTCODE"].Value = sPlantCode;
-            this.grid1.ActiveRow.Cells["GRPID"].Value     = "SW";
             this.grid1.ActiveRow.Cells["USEFLAG"].Value   = "Y";
         }
 
@@ -160,7 +140,7 @@ namespace KFQS_Form
                 // 해당 내역을 저장하시겠습니까?
                 if (ShowDialog("해당 내역을 저장하시겠습니까?") == DialogResult.Cancel)
                 {
-                    throw new Exception("작업자 ID를 입력하지 않았습니다.");
+                    throw new Exception("비가동 코드를 입력하지 않았습니다.");
                 }
 
                 // 갱신 이력이 담긴 데이터테이블에서 한 행씩 뽑아와서 처리한다.
@@ -171,17 +151,12 @@ namespace KFQS_Form
                     {
                         // 추가된 상태이면
                         case DataRowState.Added:
-                            if (Convert.ToString(dr["WORKERID"]) == "") return;
-                            helper.ExecuteNoneQuery("13BM_WorkerMaster_I", CommandType.StoredProcedure
+                            if (Convert.ToString(dr["STOPCODE"]) == "") return;
+                            helper.ExecuteNoneQuery("13BM_StopListMaster_I", CommandType.StoredProcedure
                                 , helper.CreateParameter("PLANTCODE",  Convert.ToString(dr["PLANTCODE"]))
-                                , helper.CreateParameter("WORKERID",   Convert.ToString(dr["WORKERID"]))
-                                , helper.CreateParameter("WORKERNAME", Convert.ToString(dr["WORKERNAME"]))
-                                , helper.CreateParameter("BANCODE",    Convert.ToString(dr["BANCODE"]))
-                                , helper.CreateParameter("GRPID",      Convert.ToString(dr["GRPID"]))
-                                , helper.CreateParameter("DEPTCODE",   Convert.ToString(dr["DEPTCODE"]))
-                                , helper.CreateParameter("PHONENO",    Convert.ToString(dr["PHONENO"]))
-                                , helper.CreateParameter("INDATE",     Convert.ToString(dr["INDATE"]))
-                                , helper.CreateParameter("OUTDATE",    Convert.ToString(dr["OUTDATE"]))
+                                , helper.CreateParameter("STOPCODE",   Convert.ToString(dr["STOPCODE"]))
+                                , helper.CreateParameter("STOPNAME", Convert.ToString(dr["STOPNAME"]))
+                                , helper.CreateParameter("REMARK",    Convert.ToString(dr["REMARK"]))
                                 , helper.CreateParameter("USEFLAG",    Convert.ToString(dr["USEFLAG"]))
                                 , helper.CreateParameter("MAKER",      LoginInfo.UserID)
                                );
@@ -190,22 +165,17 @@ namespace KFQS_Form
                         case DataRowState.Deleted:
                             dr.RejectChanges();
 
-                            helper.ExecuteNoneQuery("13BM_WorkerMaster_D", CommandType.StoredProcedure, helper.CreateParameter("PLANTCODE", Convert.ToString(dr["PLANTCODE"]))
-                                                                                                      , helper.CreateParameter("WORKERID",  Convert.ToString(dr["WORKERID"])));
+                            helper.ExecuteNoneQuery("13BM_StopListMaster_D", CommandType.StoredProcedure, helper.CreateParameter("PLANTCODE", Convert.ToString(dr["PLANTCODE"]))
+                                                                                                    , helper.CreateParameter("STOPCODE",  Convert.ToString(dr["STOPCODE"])));
                             break;
                         // 수정된 상태이면
                         case DataRowState.Modified:
-                            if (Convert.ToString(dr["WORKERID"]) == "") return;
-                            helper.ExecuteNoneQuery("13BM_WorkerMaster_U", CommandType.StoredProcedure
+                            if (Convert.ToString(dr["STOPCODE"]) == "") return;
+                            helper.ExecuteNoneQuery("13BM_StopListMaster_U", CommandType.StoredProcedure
                                 , helper.CreateParameter("PLANTCODE", Convert.ToString(dr["PLANTCODE"]))
-                                , helper.CreateParameter("WORKERID", Convert.ToString(dr["WORKERID"]))
-                                , helper.CreateParameter("WORKERNAME", Convert.ToString(dr["WORKERNAME"]))
-                                , helper.CreateParameter("BANCODE", Convert.ToString(dr["BANCODE"]))
-                                , helper.CreateParameter("GRPID", Convert.ToString(dr["GRPID"]))
-                                , helper.CreateParameter("DEPTCODE", Convert.ToString(dr["DEPTCODE"]))
-                                , helper.CreateParameter("PHONENO", Convert.ToString(dr["PHONENO"]))
-                                , helper.CreateParameter("INDATE", Convert.ToString(dr["INDATE"]))
-                                , helper.CreateParameter("OUTDATE", Convert.ToString(dr["OUTDATE"]))
+                                , helper.CreateParameter("STOPCODE", Convert.ToString(dr["STOPCODE"]))
+                                , helper.CreateParameter("STOPNAME", Convert.ToString(dr["STOPNAME"]))
+                                , helper.CreateParameter("REMARK", Convert.ToString(dr["REMARK"]))
                                 , helper.CreateParameter("USEFLAG", Convert.ToString(dr["USEFLAG"]))
                                 , helper.CreateParameter("EDITOR", LoginInfo.UserID)
                                );

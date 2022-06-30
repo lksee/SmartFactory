@@ -72,9 +72,9 @@
   <PropertyGroup />
   <PropertyGroup />
   <ItemGroup>
-    <Reference Include="DC00_assm, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="DC00_assm, Version=1.0.1.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>DLL\DC00_assm.dll</HintPath>
+      <HintPath>bin\Debug\DC00_assm.dll</HintPath>
     </Reference>
     <Reference Include="DC00_Component, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

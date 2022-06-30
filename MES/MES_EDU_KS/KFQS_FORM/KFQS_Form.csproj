@@ -48,6 +48,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BM_StopListMaster[비가동항목관리].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BM_StopListMaster[비가동항목관리].Designer.cs">
+      <DependentUpon>BM_StopListMaster[비가동항목관리].cs</DependentUpon>
+    </Compile>
     <Compile Include="BM_WorkerMaster[작업자마스터].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,9 +68,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="DC00_assm, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="DC00_assm, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\KFQS_MES_2022\DLL\DC00_assm.dll</HintPath>
+      <HintPath>..\KFQS_MES_2022\bin\Debug\DC00_assm.dll</HintPath>
     </Reference>
     <Reference Include="DC00_Component">
       <HintPath>..\KFQS_MES_2022\bin\Debug\DC00_Component.dll</HintPath>
@@ -112,6 +118,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BM_StopListMaster[비가동항목관리].resx">
+      <DependentUpon>BM_StopListMaster[비가동항목관리].cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BM_WorkerMaster[작업자마스터].resx">
       <DependentUpon>BM_WorkerMaster[작업자마스터].cs</DependentUpon>
     </EmbeddedResource>
