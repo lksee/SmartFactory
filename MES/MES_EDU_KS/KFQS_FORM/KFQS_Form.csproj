@@ -48,6 +48,18 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AP_ProductPlan[생산계획생성및작업지시].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AP_ProductPlan[생산계획생성및작업지시].Designer.cs">
+      <DependentUpon>AP_ProductPlan[생산계획생성및작업지시].cs</DependentUpon>
+    </Compile>
+    <Compile Include="BM_CustMaster[거래처마스터].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BM_CustMaster[거래처마스터].Designer.cs">
+      <DependentUpon>BM_CustMaster[거래처마스터].cs</DependentUpon>
+    </Compile>
     <Compile Include="BM_StopListMaster[비가동항목관리].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +130,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AP_ProductPlan[생산계획생성및작업지시].resx">
+      <DependentUpon>AP_ProductPlan[생산계획생성및작업지시].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BM_CustMaster[거래처마스터].resx">
+      <DependentUpon>BM_CustMaster[거래처마스터].cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BM_StopListMaster[비가동항목관리].resx">
       <DependentUpon>BM_StopListMaster[비가동항목관리].cs</DependentUpon>
     </EmbeddedResource>
