@@ -168,6 +168,12 @@ namespace KFQS_Form
 
         public override void DoDelete()
         {
+            if (Convert.ToString(grid1.ActiveRow.Cells["ORDERNO"].Value) != "")
+            {
+                ShowDialog("작업 지시 확정 내역을 취소 후 진행하세요.");
+                return;
+            }
+
             base.DoDelete();
             this.grid1.DeleteRow();
         }
@@ -216,8 +222,9 @@ namespace KFQS_Form
                         case DataRowState.Deleted:
                             dr.RejectChanges();
 
-                            helper.ExecuteNoneQuery("13AP_ProductPlan_D", CommandType.StoredProcedure, helper.CreateParameter("PLANTCODE", Convert.ToString(dr["PLANTCODE"]))
-                                                                                                    , helper.CreateParameter("CUSTCODE",  Convert.ToString(dr["CUSTCODE"])));
+                            helper.ExecuteNoneQuery("13AP_ProductPlan_D", CommandType.StoredProcedure
+                                                    , helper.CreateParameter("@PLANTCODE", Convert.ToString(dr["PLANTCODE"]))
+                                                    , helper.CreateParameter("@PLANNO",    Convert.ToString(dr["PLANNO"])));
                             break;
                         // 수정된 상태이면
                         case DataRowState.Modified:
@@ -228,13 +235,13 @@ namespace KFQS_Form
                             // 체크박스에 체크가 해제되어 있으면 확정 취소 로직으로 간주
                             string sOrderFlag = "N";
                             if (Convert.ToString(dr["CHK"]) == "1") sOrderFlag = "Y";
-                                helper.ExecuteNoneQuery("13AP_ProductPlan_U", CommandType.StoredProcedure
-                                    , helper.CreateParameter("PLANTCODE",       Convert.ToString(dr["PLANTCODE"]))
-                                    , helper.CreateParameter("PLANNO",          Convert.ToString(dr["PLANNO"]))
-                                    , helper.CreateParameter("ORDERFLAG",       sOrderFlag)
-                                    , helper.CreateParameter("WORKCENTERCODE",  Convert.ToString(dr["WORKCENTERCODE"]))
-                                    , helper.CreateParameter("EDITOR",          LoginInfo.UserID)
-                                   );
+                            helper.ExecuteNoneQuery("13AP_ProductPlan_U",   CommandType.StoredProcedure
+                                , helper.CreateParameter("PLANTCODE",       Convert.ToString(dr["PLANTCODE"]))
+                                , helper.CreateParameter("PLANNO",          Convert.ToString(dr["PLANNO"]))
+                                , helper.CreateParameter("ORDERFLAG",       sOrderFlag)
+                                , helper.CreateParameter("WORKCENTERCODE",  Convert.ToString(dr["WORKCENTERCODE"]))
+                                , helper.CreateParameter("EDITOR",          LoginInfo.UserID)
+                                );
                             break;
                     }
 
@@ -249,6 +256,7 @@ namespace KFQS_Form
                 helper.Commit();
 
                 ShowDialog("정상적으로 등록하였습니다.");
+                DoInquire(); // 완료된 내역 재조회.
             }
             catch (Exception ex)
             {
