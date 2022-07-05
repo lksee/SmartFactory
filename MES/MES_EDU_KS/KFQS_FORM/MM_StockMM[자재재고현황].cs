@@ -3,6 +3,7 @@ using System.Data;
 using DC00_assm;
 using DC00_WinForm;
 using Infragistics.Win;
+using DC_POPUP;
 
 namespace KFQS_Form
 {
@@ -120,5 +121,36 @@ namespace KFQS_Form
             }
         }
         #endregion
+
+        private void btnLabelPrint_Click(object sender, EventArgs e)
+        {
+            // 자재 식별표 출력.
+            // 1. 식별표에 전달할 데이터 등록.
+            if (grid1.Rows.Count == 0) return;
+
+            // 그리드의 컬럼을 그대로 가지고 있는 빈 깡통 데이터행 생성.
+            DataRow drRow = ((DataTable)grid1.DataSource).NewRow();
+            drRow["ITEMCODE"] = Convert.ToString(grid1.ActiveRow.Cells["ITEMCODE"].Value);
+            drRow["ITEMNAME"] = Convert.ToString(grid1.ActiveRow.Cells["ITEMNAME"].Value);
+            drRow["STOCKQTY"] = Convert.ToString(grid1.ActiveRow.Cells["STOCKQTY"].Value);
+            drRow["MATLOTNO"] = Convert.ToString(grid1.ActiveRow.Cells["MATLOTNO"].Value);
+            drRow["UNITCODE"] = Convert.ToString(grid1.ActiveRow.Cells["UNITCODE"].Value);
+
+            // 바코드 디자인 객체 선언.
+            Report_LotBacode LotBarcode = new Report_LotBacode();
+
+            // 바코드 디자인을 담을 레포트 북 객체 선언.
+            Telerik.Reporting.ReportBook reportBook = new Telerik.Reporting.ReportBook();
+
+            // 바코드 디자인에 데이터 바인딩.
+            LotBarcode.DataSource = drRow;
+
+            // 데이터가 바인딩된 레포트 디자인 레포트 북에 담기.
+            reportBook.Reports.Add(LotBarcode);
+
+            // 레포트 뷰어에 레포트 북 추가하여 미리보기 창 활성화.
+            ReportViewer reportViewer = new ReportViewer(reportBook, 1);
+            reportViewer.ShowDialog();
+        }
     }
 }

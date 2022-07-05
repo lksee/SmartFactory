@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DC00_assm;
+using DC00_PuMan;
 
 
 namespace DC_POPUP

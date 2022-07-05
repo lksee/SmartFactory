@@ -1,7 +1,7 @@
 ﻿
 namespace KFQS_Form
 {
-    partial class MM_StockMM
+    partial class MM_StockMMRec
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -45,14 +45,21 @@ namespace KFQS_Form
             Infragistics.Win.Appearance appearance31 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance29 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton4 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
+            Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton3 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
             this.sLabel3 = new DC00_Component.SLabel();
             this.sLabel1 = new DC00_Component.SLabel();
             this.cboPlantCode_H = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
             this.cboItemCode_H = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
             this.grid1 = new DC00_Component.Grid(this.components);
             this.sLabel4 = new DC00_Component.SLabel();
-            this.txtMatLotNo_H = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
-            this.btnLabelPrint = new Infragistics.Win.Misc.UltraButton();
+            this.txtLotNo_H = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
+            this.sLabel6 = new DC00_Component.SLabel();
+            this.dtpStart_H = new Infragistics.Win.UltraWinSchedule.UltraCalendarCombo();
+            this.sLabel5 = new DC00_Component.SLabel();
+            this.dtpEnd_H = new Infragistics.Win.UltraWinSchedule.UltraCalendarCombo();
             ((System.ComponentModel.ISupportInitialize)(this.gbxHeader)).BeginInit();
             this.gbxHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbxBody)).BeginInit();
@@ -60,7 +67,9 @@ namespace KFQS_Form
             ((System.ComponentModel.ISupportInitialize)(this.cboPlantCode_H)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboItemCode_H)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMatLotNo_H)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLotNo_H)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpStart_H)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpEnd_H)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxHeader
@@ -69,8 +78,11 @@ namespace KFQS_Form
             this.gbxHeader.ContentPadding.Left = 2;
             this.gbxHeader.ContentPadding.Right = 2;
             this.gbxHeader.ContentPadding.Top = 4;
-            this.gbxHeader.Controls.Add(this.btnLabelPrint);
-            this.gbxHeader.Controls.Add(this.txtMatLotNo_H);
+            this.gbxHeader.Controls.Add(this.dtpEnd_H);
+            this.gbxHeader.Controls.Add(this.sLabel5);
+            this.gbxHeader.Controls.Add(this.dtpStart_H);
+            this.gbxHeader.Controls.Add(this.sLabel6);
+            this.gbxHeader.Controls.Add(this.txtLotNo_H);
             this.gbxHeader.Controls.Add(this.cboItemCode_H);
             this.gbxHeader.Controls.Add(this.sLabel3);
             this.gbxHeader.Controls.Add(this.sLabel4);
@@ -97,7 +109,7 @@ namespace KFQS_Form
             this.sLabel3.Appearance = appearance5;
             this.sLabel3.DbField = null;
             this.sLabel3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sLabel3.Location = new System.Drawing.Point(59, 42);
+            this.sLabel3.Location = new System.Drawing.Point(317, 12);
             this.sLabel3.Name = "sLabel3";
             this.sLabel3.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
             this.sLabel3.Size = new System.Drawing.Size(100, 23);
@@ -132,9 +144,9 @@ namespace KFQS_Form
             // cboItemCode_H
             // 
             this.cboItemCode_H.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cboItemCode_H.Location = new System.Drawing.Point(165, 40);
+            this.cboItemCode_H.Location = new System.Drawing.Point(423, 10);
             this.cboItemCode_H.Name = "cboItemCode_H";
-            this.cboItemCode_H.Size = new System.Drawing.Size(450, 25);
+            this.cboItemCode_H.Size = new System.Drawing.Size(250, 25);
             this.cboItemCode_H.TabIndex = 9;
             // 
             // grid1
@@ -230,36 +242,80 @@ namespace KFQS_Form
             this.sLabel4.Appearance = appearance2;
             this.sLabel4.DbField = null;
             this.sLabel4.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sLabel4.Location = new System.Drawing.Point(674, 42);
+            this.sLabel4.Location = new System.Drawing.Point(59, 41);
             this.sLabel4.Name = "sLabel4";
             this.sLabel4.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
             this.sLabel4.Size = new System.Drawing.Size(100, 23);
             this.sLabel4.TabIndex = 0;
             this.sLabel4.Text = "LOT NO";
             // 
-            // txtMatLotNo_H
+            // txtLotNo_H
             // 
-            this.txtMatLotNo_H.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtMatLotNo_H.Location = new System.Drawing.Point(780, 40);
-            this.txtMatLotNo_H.Name = "txtMatLotNo_H";
-            this.txtMatLotNo_H.Size = new System.Drawing.Size(267, 25);
-            this.txtMatLotNo_H.TabIndex = 10;
+            this.txtLotNo_H.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtLotNo_H.Location = new System.Drawing.Point(165, 39);
+            this.txtLotNo_H.Name = "txtLotNo_H";
+            this.txtLotNo_H.Size = new System.Drawing.Size(508, 25);
+            this.txtLotNo_H.TabIndex = 10;
             // 
-            // btnLabelPrint
+            // sLabel6
             // 
-            this.btnLabelPrint.Location = new System.Drawing.Point(1073, 41);
-            this.btnLabelPrint.Name = "btnLabelPrint";
-            this.btnLabelPrint.Size = new System.Drawing.Size(162, 23);
-            this.btnLabelPrint.TabIndex = 11;
-            this.btnLabelPrint.Text = "자재 식별표 출력";
-            this.btnLabelPrint.Click += new System.EventHandler(this.btnLabelPrint_Click);
+            appearance3.FontData.BoldAsString = "False";
+            appearance3.FontData.UnderlineAsString = "False";
+            appearance3.ForeColor = System.Drawing.Color.Black;
+            appearance3.TextHAlignAsString = "Right";
+            appearance3.TextVAlignAsString = "Middle";
+            this.sLabel6.Appearance = appearance3;
+            this.sLabel6.DbField = null;
+            this.sLabel6.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sLabel6.Location = new System.Drawing.Point(674, 12);
+            this.sLabel6.Name = "sLabel6";
+            this.sLabel6.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
+            this.sLabel6.Size = new System.Drawing.Size(100, 23);
+            this.sLabel6.TabIndex = 11;
+            this.sLabel6.Text = "발주 일자";
             // 
-            // MM_StockMM
+            // dtpStart_H
+            // 
+            this.dtpStart_H.DateButtons.Add(dateButton4);
+            this.dtpStart_H.Location = new System.Drawing.Point(780, 9);
+            this.dtpStart_H.Name = "dtpStart_H";
+            this.dtpStart_H.NonAutoSizeHeight = 26;
+            this.dtpStart_H.Size = new System.Drawing.Size(121, 26);
+            this.dtpStart_H.TabIndex = 13;
+            // 
+            // sLabel5
+            // 
+            appearance7.FontData.BoldAsString = "False";
+            appearance7.FontData.UnderlineAsString = "False";
+            appearance7.ForeColor = System.Drawing.Color.Black;
+            appearance7.TextHAlignAsString = "Right";
+            appearance7.TextVAlignAsString = "Middle";
+            this.sLabel5.Appearance = appearance7;
+            this.sLabel5.AutoSize = true;
+            this.sLabel5.DbField = null;
+            this.sLabel5.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sLabel5.Location = new System.Drawing.Point(907, 11);
+            this.sLabel5.Name = "sLabel5";
+            this.sLabel5.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
+            this.sLabel5.Size = new System.Drawing.Size(13, 18);
+            this.sLabel5.TabIndex = 14;
+            this.sLabel5.Text = "~";
+            // 
+            // dtpEnd_H
+            // 
+            this.dtpEnd_H.DateButtons.Add(dateButton3);
+            this.dtpEnd_H.Location = new System.Drawing.Point(926, 9);
+            this.dtpEnd_H.Name = "dtpEnd_H";
+            this.dtpEnd_H.NonAutoSizeHeight = 26;
+            this.dtpEnd_H.Size = new System.Drawing.Size(121, 26);
+            this.dtpEnd_H.TabIndex = 15;
+            // 
+            // MM_StockMMRec
             // 
             this.ClientSize = new System.Drawing.Size(1449, 825);
-            this.Name = "MM_StockMM";
-            this.Text = "자재 발주 및 입고";
-            this.Load += new System.EventHandler(this.MM_StockMM_Load);
+            this.Name = "MM_StockMMRec";
+            this.Text = "자재 입출고 이력 관리";
+            this.Load += new System.EventHandler(this.MM_StockMMRec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gbxHeader)).EndInit();
             this.gbxHeader.ResumeLayout(false);
             this.gbxHeader.PerformLayout();
@@ -268,7 +324,9 @@ namespace KFQS_Form
             ((System.ComponentModel.ISupportInitialize)(this.cboPlantCode_H)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboItemCode_H)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMatLotNo_H)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLotNo_H)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpStart_H)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpEnd_H)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,7 +338,10 @@ namespace KFQS_Form
         private DC00_Component.SLabel sLabel1;
         private DC00_Component.Grid grid1;
         private DC00_Component.SLabel sLabel4;
-        private Infragistics.Win.UltraWinEditors.UltraTextEditor txtMatLotNo_H;
-        private Infragistics.Win.Misc.UltraButton btnLabelPrint;
+        private DC00_Component.SLabel sLabel6;
+        private Infragistics.Win.UltraWinEditors.UltraTextEditor txtLotNo_H;
+        private Infragistics.Win.UltraWinSchedule.UltraCalendarCombo dtpEnd_H;
+        private DC00_Component.SLabel sLabel5;
+        private Infragistics.Win.UltraWinSchedule.UltraCalendarCombo dtpStart_H;
     }
 }

@@ -96,12 +96,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BizGridManager.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BizTextBoxManager.cs" />
-    <Compile Include="PopUpManager.cs" />
-    <Compile Include="PopUp_Biz.cs" />
     <Compile Include="POP_TBM0100[품목].cs">
       <SubType>Form</SubType>
     </Compile>

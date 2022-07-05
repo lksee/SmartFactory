@@ -48,6 +48,18 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="MM_StockOut[자재 출고 등록].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MM_StockOut[자재 출고 등록].Designer.cs">
+      <DependentUpon>MM_StockOut[자재 출고 등록].cs</DependentUpon>
+    </Compile>
+    <Compile Include="MM_StockMMRec[자재입출고이력관리].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MM_StockMMRec[자재입출고이력관리].Designer.cs">
+      <DependentUpon>MM_StockMMRec[자재입출고이력관리].cs</DependentUpon>
+    </Compile>
     <Compile Include="MM_StockMM[자재재고현황].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +154,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MM_StockOut[자재 출고 등록].resx">
+      <DependentUpon>MM_StockOut[자재 출고 등록].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MM_StockMMRec[자재입출고이력관리].resx">
+      <DependentUpon>MM_StockMMRec[자재입출고이력관리].cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MM_StockMM[자재재고현황].resx">
       <DependentUpon>MM_StockMM[자재재고현황].cs</DependentUpon>
     </EmbeddedResource>
