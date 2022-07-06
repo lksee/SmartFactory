@@ -48,6 +48,24 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="PP_ActualOutput[생산실적등록].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PP_ActualOutput[생산실적등록].Designer.cs">
+      <DependentUpon>PP_ActualOutput[생산실적등록].cs</DependentUpon>
+    </Compile>
+    <Compile Include="PP_StockPPRec[공정창고입출고이력관리].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PP_StockPPRec[공정창고입출고이력관리].Designer.cs">
+      <DependentUpon>PP_StockPPRec[공정창고입출고이력관리].cs</DependentUpon>
+    </Compile>
+    <Compile Include="PP_StockPP[공정창고재고조회].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PP_StockPP[공정창고재고조회].Designer.cs">
+      <DependentUpon>PP_StockPP[공정창고재고조회].cs</DependentUpon>
+    </Compile>
     <Compile Include="MM_StockOut[자재 출고 등록].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +172,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="PP_ActualOutput[생산실적등록].resx">
+      <DependentUpon>PP_ActualOutput[생산실적등록].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PP_StockPPRec[공정창고입출고이력관리].resx">
+      <DependentUpon>PP_StockPPRec[공정창고입출고이력관리].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PP_StockPP[공정창고재고조회].resx">
+      <DependentUpon>PP_StockPP[공정창고재고조회].cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MM_StockOut[자재 출고 등록].resx">
       <DependentUpon>MM_StockOut[자재 출고 등록].cs</DependentUpon>
     </EmbeddedResource>

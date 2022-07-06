@@ -162,7 +162,7 @@
             this.cboSite.Location = new System.Drawing.Point(113, 349);
             this.cboSite.Name = "cboSite";
             this.cboSite.Size = new System.Drawing.Size(436, 30);
-            this.cboSite.TabIndex = 0;
+            this.cboSite.TabIndex = 2;
             this.cboSite.UseFlatMode = Infragistics.Win.DefaultableBoolean.True;
             this.cboSite.ValueChanged += new System.EventHandler(this.cboSite_ValueChanged);
             // 
@@ -212,7 +212,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(130, 30);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.TabIndex = 0;
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // btnConfig
