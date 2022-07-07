@@ -141,8 +141,9 @@
     <Reference Include="DC00_WinForm">
       <HintPath>..\KFQS_MES_2022\bin\Debug\DC00_WinForm.dll</HintPath>
     </Reference>
-    <Reference Include="DC_POPUP">
-      <HintPath>..\KFQS_MES_2022\bin\Debug\DC_POPUP.dll</HintPath>
+    <Reference Include="DC_POPUP, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DC_POPUP\bin\Debug\DC_POPUP.dll</HintPath>
     </Reference>
     <Reference Include="Infragistics2.Shared.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics2.Win.Misc.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />

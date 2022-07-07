@@ -135,7 +135,7 @@ namespace KFQS_Form
             this.sLabel3.Appearance = appearance2;
             this.sLabel3.DbField = null;
             this.sLabel3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sLabel3.Location = new System.Drawing.Point(318, 14);
+            this.sLabel3.Location = new System.Drawing.Point(318, 13);
             this.sLabel3.Name = "sLabel3";
             this.sLabel3.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
             this.sLabel3.Size = new System.Drawing.Size(100, 23);
@@ -152,7 +152,7 @@ namespace KFQS_Form
             this.sLabel1.Appearance = appearance1;
             this.sLabel1.DbField = null;
             this.sLabel1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sLabel1.Location = new System.Drawing.Point(36, 15);
+            this.sLabel1.Location = new System.Drawing.Point(36, 13);
             this.sLabel1.Name = "sLabel1";
             this.sLabel1.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
             this.sLabel1.Size = new System.Drawing.Size(100, 23);
@@ -258,6 +258,7 @@ namespace KFQS_Form
             this.grid1.UpdateMode = Infragistics.Win.UltraWinGrid.UpdateMode.OnCellChange;
             this.grid1.UseFlatMode = Infragistics.Win.DefaultableBoolean.True;
             this.grid1.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
+            this.grid1.AfterRowActivate += new System.EventHandler(this.grid1_AfterRowActivate);
             // 
             // txtWorkerName_H
             // 
@@ -265,7 +266,7 @@ namespace KFQS_Form
             appearance6.FontData.UnderlineAsString = "False";
             appearance6.ForeColor = System.Drawing.Color.Black;
             this.txtWorkerName_H.Appearance = appearance6;
-            this.txtWorkerName_H.Location = new System.Drawing.Point(862, 9);
+            this.txtWorkerName_H.Location = new System.Drawing.Point(862, 10);
             this.txtWorkerName_H.Name = "txtWorkerName_H";
             this.txtWorkerName_H.RequireFlag = DC00_Component.STextBox.RequireFlagEnum.NO;
             this.txtWorkerName_H.RequirePop = DC00_Component.STextBox.RequireFlagEnum.NO;
@@ -280,7 +281,7 @@ namespace KFQS_Form
             this.txtWorkerID_H.Appearance = appearance4;
             this.txtWorkerID_H.btnImgType = DC00_Component.SBtnTextEditor.ButtonImgTypeEnum.Type1;
             this.txtWorkerID_H.btnWidth = 26;
-            this.txtWorkerID_H.Location = new System.Drawing.Point(696, 9);
+            this.txtWorkerID_H.Location = new System.Drawing.Point(696, 10);
             this.txtWorkerID_H.Name = "txtWorkerID_H";
             this.txtWorkerID_H.RequireFlag = DC00_Component.SBtnTextEditor.RequireFlagEnum.NO;
             this.txtWorkerID_H.RequirePop = DC00_Component.SBtnTextEditor.RequireFlagEnum.NO;
@@ -297,7 +298,7 @@ namespace KFQS_Form
             this.sLabel2.Appearance = appearance8;
             this.sLabel2.DbField = null;
             this.sLabel2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sLabel2.Location = new System.Drawing.Point(590, 14);
+            this.sLabel2.Location = new System.Drawing.Point(590, 13);
             this.sLabel2.Name = "sLabel2";
             this.sLabel2.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
             this.sLabel2.Size = new System.Drawing.Size(100, 23);
@@ -307,11 +308,12 @@ namespace KFQS_Form
             // btnWorkerReg
             // 
             this.btnWorkerReg.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnWorkerReg.Location = new System.Drawing.Point(1028, 8);
+            this.btnWorkerReg.Location = new System.Drawing.Point(1028, 9);
             this.btnWorkerReg.Name = "btnWorkerReg";
             this.btnWorkerReg.Size = new System.Drawing.Size(160, 30);
             this.btnWorkerReg.TabIndex = 4;
             this.btnWorkerReg.Text = "(2) 작업자 등록";
+            this.btnWorkerReg.Click += new System.EventHandler(this.btnWorkerReg_Click);
             // 
             // btnWorkOrderReg
             // 
@@ -321,6 +323,7 @@ namespace KFQS_Form
             this.btnWorkOrderReg.Size = new System.Drawing.Size(160, 30);
             this.btnWorkOrderReg.TabIndex = 5;
             this.btnWorkOrderReg.Text = "(3) 작업 지시 선택";
+            this.btnWorkOrderReg.Click += new System.EventHandler(this.btnWorkOrderReg_Click);
             // 
             // ultraGroupBox1
             // 
@@ -337,11 +340,12 @@ namespace KFQS_Form
             // btnROHLotReg
             // 
             this.btnROHLotReg.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnROHLotReg.Location = new System.Drawing.Point(337, 21);
+            this.btnROHLotReg.Location = new System.Drawing.Point(337, 19);
             this.btnROHLotReg.Name = "btnROHLotReg";
             this.btnROHLotReg.Size = new System.Drawing.Size(160, 30);
             this.btnROHLotReg.TabIndex = 7;
-            this.btnROHLotReg.Text = "(4) LOT 투입";
+            this.btnROHLotReg.Text = "LOT 투입";
+            this.btnROHLotReg.Click += new System.EventHandler(this.btnROHLotReg_Click);
             // 
             // sLabel4
             // 
@@ -356,9 +360,9 @@ namespace KFQS_Form
             this.sLabel4.Location = new System.Drawing.Point(5, 23);
             this.sLabel4.Name = "sLabel4";
             this.sLabel4.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
-            this.sLabel4.Size = new System.Drawing.Size(100, 23);
+            this.sLabel4.Size = new System.Drawing.Size(124, 23);
             this.sLabel4.TabIndex = 19;
-            this.sLabel4.Text = "투입 LOT 번호";
+            this.sLabel4.Text = "(4) 투입 LOT 번호";
             // 
             // txtROHLotNo_H
             // 
@@ -366,17 +370,17 @@ namespace KFQS_Form
             appearance9.FontData.UnderlineAsString = "False";
             appearance9.ForeColor = System.Drawing.Color.Black;
             this.txtROHLotNo_H.Appearance = appearance9;
-            this.txtROHLotNo_H.Location = new System.Drawing.Point(111, 21);
+            this.txtROHLotNo_H.Location = new System.Drawing.Point(135, 22);
             this.txtROHLotNo_H.Name = "txtROHLotNo_H";
             this.txtROHLotNo_H.RequireFlag = DC00_Component.STextBox.RequireFlagEnum.NO;
             this.txtROHLotNo_H.RequirePop = DC00_Component.STextBox.RequireFlagEnum.NO;
-            this.txtROHLotNo_H.Size = new System.Drawing.Size(220, 25);
+            this.txtROHLotNo_H.Size = new System.Drawing.Size(196, 25);
             this.txtROHLotNo_H.TabIndex = 6;
             // 
             // btnRunStop
             // 
             this.btnRunStop.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnRunStop.Location = new System.Drawing.Point(530, 72);
+            this.btnRunStop.Location = new System.Drawing.Point(523, 73);
             this.btnRunStop.Name = "btnRunStop";
             this.btnRunStop.Size = new System.Drawing.Size(160, 30);
             this.btnRunStop.TabIndex = 8;
@@ -410,7 +414,7 @@ namespace KFQS_Form
             this.sLabel6.Appearance = appearance3;
             this.sLabel6.DbField = null;
             this.sLabel6.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sLabel6.Location = new System.Drawing.Point(892, 50);
+            this.sLabel6.Location = new System.Drawing.Point(892, 51);
             this.sLabel6.Name = "sLabel6";
             this.sLabel6.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
             this.sLabel6.Size = new System.Drawing.Size(100, 23);
@@ -423,7 +427,7 @@ namespace KFQS_Form
             appearance11.FontData.UnderlineAsString = "False";
             appearance11.ForeColor = System.Drawing.Color.Black;
             this.txtProductQty_H.Appearance = appearance11;
-            this.txtProductQty_H.Location = new System.Drawing.Point(696, 73);
+            this.txtProductQty_H.Location = new System.Drawing.Point(696, 74);
             this.txtProductQty_H.Name = "txtProductQty_H";
             this.txtProductQty_H.RequireFlag = DC00_Component.STextBox.RequireFlagEnum.NO;
             this.txtProductQty_H.RequirePop = DC00_Component.STextBox.RequireFlagEnum.NO;
@@ -436,7 +440,7 @@ namespace KFQS_Form
             appearance10.FontData.UnderlineAsString = "False";
             appearance10.ForeColor = System.Drawing.Color.Black;
             this.txtBadQty_H.Appearance = appearance10;
-            this.txtBadQty_H.Location = new System.Drawing.Point(862, 72);
+            this.txtBadQty_H.Location = new System.Drawing.Point(862, 74);
             this.txtBadQty_H.Name = "txtBadQty_H";
             this.txtBadQty_H.RequireFlag = DC00_Component.STextBox.RequireFlagEnum.NO;
             this.txtBadQty_H.RequirePop = DC00_Component.STextBox.RequireFlagEnum.NO;
@@ -446,7 +450,7 @@ namespace KFQS_Form
             // btnProductReg
             // 
             this.btnProductReg.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnProductReg.Location = new System.Drawing.Point(1028, 71);
+            this.btnProductReg.Location = new System.Drawing.Point(1028, 73);
             this.btnProductReg.Name = "btnProductReg";
             this.btnProductReg.Size = new System.Drawing.Size(160, 30);
             this.btnProductReg.TabIndex = 11;
@@ -455,7 +459,7 @@ namespace KFQS_Form
             // btnWorkOrderClose
             // 
             this.btnWorkOrderClose.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnWorkOrderClose.Location = new System.Drawing.Point(1225, 70);
+            this.btnWorkOrderClose.Location = new System.Drawing.Point(1225, 73);
             this.btnWorkOrderClose.Name = "btnWorkOrderClose";
             this.btnWorkOrderClose.Size = new System.Drawing.Size(160, 30);
             this.btnWorkOrderClose.TabIndex = 12;
