@@ -7,6 +7,7 @@ using Infragistics.Win;
 using Infragistics.Win.UltraWinGrid;
 using DC00_PuMan;
 using DC_POPUP;
+using System.Drawing;
 
 namespace KFQS_Form
 {
@@ -53,8 +54,8 @@ namespace KFQS_Form
             _GridUtil.InitColumnUltraGrid(grid1, "COMPONENTQTY",         "투입 잔량",        GridColDataType_emu.Double,          120, HAlign.Right,  true,  false);
             _GridUtil.InitColumnUltraGrid(grid1, "WORKER",               "작업자 ID",        GridColDataType_emu.VarChar,         130, HAlign.Left,   false, false);
             _GridUtil.InitColumnUltraGrid(grid1, "WORKERNAME",           "작업자 명",        GridColDataType_emu.VarChar,         130, HAlign.Left,   true,  false);
-            _GridUtil.InitColumnUltraGrid(grid1, "STARTDATE",            "지시 시작 일시",   GridColDataType_emu.VarChar,         130, HAlign.Left,   true,  false);
-            _GridUtil.InitColumnUltraGrid(grid1, "ENDDATE",              "지시 종료 일시",   GridColDataType_emu.VarChar,         130, HAlign.Left,   true,  false);
+            _GridUtil.InitColumnUltraGrid(grid1, "STARTDATE",            "지시 시작 일시",   GridColDataType_emu.DateTime24,      130, HAlign.Left,   true,  false);
+            _GridUtil.InitColumnUltraGrid(grid1, "ENDDATE",              "지시 종료 일시",   GridColDataType_emu.DateTime24,      130, HAlign.Left,   true,  false);
 
             _GridUtil.InitColumnUltraGrid(grid1, "MAKER",                "생성자",           GridColDataType_emu.VarChar,         130, HAlign.Left,   true,  false);
             _GridUtil.InitColumnUltraGrid(grid1, "MAKEDATE",             "생성일자",         GridColDataType_emu.DateTime24,      130, HAlign.Left,   true,  false);
@@ -282,6 +283,35 @@ namespace KFQS_Form
             // 1. 등록된 작업자를 작업자 텍스트박스에 표시.
             txtWorkerID_H.Text = Convert.ToString(grid1.ActiveRow.Cells["WORKER"].Value);
             txtWorkerName_H.Text = Convert.ToString(grid1.ActiveRow.Cells["WORKERNAME"].Value);
+
+            // 2. 투입된 원자재 LOT가 있을 경우 투입 취소 버튼 이름으로 변경.
+            string sMatLotNo = Convert.ToString(grid1.ActiveRow.Cells["MATLOTNO"].Value);
+            if (sMatLotNo == "")
+            {
+                txtROHLotNo_H.Text = "";
+                btnROHLotReg.Text = "LOT 투입";
+                btnROHLotReg.BackColor = Color.Blue;
+                btnROHLotReg.Tag = "IN";
+            }
+            else
+            {
+                txtROHLotNo_H.Text = sMatLotNo;
+                btnROHLotReg.Text = "LOT 투입 취소";
+                btnROHLotReg.BackColor = Color.Red;
+                btnROHLotReg.Tag = "CANCEL";
+            }
+
+            // 3. 현재 작업장 가동/비가동 상태에 따라 R, S 으로 Button Text 변경
+            if (Convert.ToString(grid1.ActiveRow.Cells["WORKSTATUSCODE"].Value) == "R")
+            {
+                btnRunStop_H.Text = "⛔비가동";
+                btnRunStop_H.Tag  = "S";
+            }
+            else
+            {
+                btnRunStop_H.Text = "⚙가동";
+                btnRunStop_H.Tag = "R";
+            }
         }
 
         private void btnROHLotReg_Click(object sender, EventArgs e)
@@ -303,9 +333,6 @@ namespace KFQS_Form
                 return;
             }
 
-            // 원자재 LOT 투입 상황
-            string sInFlag = "IN";
-
             DBHelper helper = new DBHelper("", true);
 
             try
@@ -324,7 +351,7 @@ namespace KFQS_Form
                     , helper.CreateParameter("@LOTNO",          sLotNo)
                     , helper.CreateParameter("@UNITCODE",       sUnitCode)
                     , helper.CreateParameter("@WORKERID",       sWorkerID)
-                    , helper.CreateParameter("@INFLAG",         sInFlag)
+                    , helper.CreateParameter("@INFLAG",         Convert.ToString(btnROHLotReg.Tag))
                     );
 
                 if (helper.RSCODE != "S") throw new Exception($"LOT 투입/취소 등록 중 오류가 발생하였습니다.\r\n{helper.RSMSG}");
@@ -343,5 +370,154 @@ namespace KFQS_Form
                 helper.Close();
             }
         }
+
+        #region < 5. 가동/비가동 클릭 >
+        private void btnRunStop_Click(object sender, EventArgs e)
+        {
+            checkGridValidation();
+
+            DBHelper helper = new DBHelper("", true);
+
+            try
+            {
+                string sItemCode =       Convert.ToString(grid1.ActiveRow.Cells["ITEMCODE"].Value);
+                string sWorkCenterCode = Convert.ToString(grid1.ActiveRow.Cells["WORKCENTERCODE"].Value);
+                string sOrderNo =        Convert.ToString(grid1.ActiveRow.Cells["ORDERNO"].Value);
+
+                // 선택한 작업장에 원자재 LOT 투입/취소
+                helper.ExecuteNoneQuery("13PP_ActualOutput_I4", CommandType.StoredProcedure
+                    , helper.CreateParameter("@PLANTCODE",      sPlantCode)
+                    , helper.CreateParameter("@WORKCENTERCODE", sWorkCenterCode)
+                    , helper.CreateParameter("@ITEMCODE",       sItemCode)
+                    , helper.CreateParameter("@ORDERNO",        sOrderNo)
+                    , helper.CreateParameter("@STATUS",         Convert.ToString(btnRunStop_H.Tag))
+                    );
+
+                if (helper.RSCODE != "S") throw new Exception($"작업장 가동/비가동 등록 중 오류가 발생하였습니다.\r\n{helper.RSMSG}");
+
+                helper.Commit();
+                ShowDialog("정상적으로 등록을 완료하였습니다.");
+                SetWorkCenter(); // 정상 완료 후 재조회
+            }
+            catch (Exception ex)
+            {
+                helper.Rollback();
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                helper.Close();
+            }
+        }
+        #endregion
+
+
+        #region < 6. 생산 실적 등록 >
+        private void btnProductReg_Click(object sender, EventArgs e)
+        {
+            checkGridValidation();
+
+            // 작업 지시 수량 대비 양품/불량 수량 입력 가능 여부 체크
+            double dProdQty     = 0; // 누적 양품 수량
+            double dBadQty      = 0; // 누적 불량 수량
+            double dTextProdQty = 0; // 입력한 양품 수량
+            double dTextBadQty  = 0; // 입력한 불량 수량
+            double dOrderQty    = 0; // 작업시지 수량
+
+            string sValidMsg = "";
+
+            // 그리드의 누적 양품 수량
+            string sProdQty = Convert.ToString(grid1.ActiveRow.Cells["PRODQTY"].Value).Replace(",", "");
+            if (!double.TryParse(sProdQty, out dProdQty)) sValidMsg += "양품 수량, ";
+
+            // 그리드의 총 누적 불량 수량
+            string sBadQty = Convert.ToString(grid1.ActiveRow.Cells["BADQTY"].Value).Replace(",", "");
+            if (!double.TryParse(sBadQty, out dBadQty)) sValidMsg += "불량 수량, ";
+
+            // 입력한 양품 수량
+            string sTextProdQty = Convert.ToString(txtProductQty_H.Text);
+            if (!double.TryParse(sTextProdQty, out dTextProdQty)) sValidMsg += "입력한 양품 수량, ";
+
+            // 입력한 불량 수량
+            string sTextBadQty = Convert.ToString(txtBadQty_H.Text);
+            if (!double.TryParse(sTextBadQty, out dTextBadQty)) sValidMsg += "입력한 불량 수량, ";
+
+            // 작업 지시 수량
+            string sOrderQty = Convert.ToString(grid1.ActiveRow.Cells["ORDERQTY"].Value).Replace(",", "");
+            if (!double.TryParse(sOrderQty, out dOrderQty)) sValidMsg += "작업 지시 수량, ";
+
+            // string -> double 변환 오류 체크
+            if (sValidMsg != "")
+            {
+                ShowDialog($"{sValidMsg.Trim(',', ' ')}의 값을 숫자로 변경하는 도중 오류가 발생했습니다.");
+            }
+
+            // 투입된 원자재 LOT가 존재하는 지 확인.
+            string sMatLotNo = Convert.ToString(grid1.ActiveRow.Cells["MATLOTNO"].Value);
+            if (sMatLotNo == "")
+            {
+                ShowDialog("투입한 원자재 LOT가 없습니다. LOT 투입 후 진행하세요.");
+                return;
+            }
+
+            // 양품 또는 불량 수량을 하나도 입력하지 않은 경우
+            if (dTextProdQty + dTextBadQty == 0)
+            {
+                ShowDialog("실적 수량을 입력하세요.");
+                return;
+            }
+            
+            // 지시 수량보다 양품 수량이 많은 경우
+            if (dOrderQty < dTextProdQty)
+            {
+                ShowDialog("총 생산 수량이 지시 수량보다 많습니다.");
+                return;
+            }
+
+            // 생산 실적 등록
+            DBHelper helper = new DBHelper("", true);
+
+            try
+            {
+                string sItemCode = Convert.ToString(grid1.ActiveRow.Cells["ITEMCODE"].Value);
+                string sWorkCenterCode = Convert.ToString(grid1.ActiveRow.Cells["WORKCENTERCODE"].Value);
+                string sOrderNo = Convert.ToString(grid1.ActiveRow.Cells["ORDERNO"].Value);
+                string sUnitCode = Convert.ToString(grid1.ActiveRow.Cells["UNITCODE"].Value);
+
+                // 생산 실적 등록을 위한 프로시저
+                helper.ExecuteNoneQuery("13PP_ActualOutput_I5", CommandType.StoredProcedure
+                    , helper.CreateParameter("@PLANTCODE",      sPlantCode)
+                    , helper.CreateParameter("@WORKCENTERCODE", sWorkCenterCode)
+                    , helper.CreateParameter("@ITEMCODE",       sItemCode)
+                    , helper.CreateParameter("@ORDERNO",        sOrderNo)
+                    , helper.CreateParameter("@UNITCODE",       sUnitCode)
+                    , helper.CreateParameter("@PRODQTY",        sTextProdQty)
+                    , helper.CreateParameter("@BADQTY",         sTextBadQty)
+                    , helper.CreateParameter("@MATLOTNO",       sMatLotNo)
+
+
+                    );
+
+                if (helper.RSCODE != "S") throw new Exception($"생산 실적 등록 중 오류가 발생하였습니다.\r\n{helper.RSMSG}");
+
+                helper.Commit();
+                ShowDialog("정상적으로 등록을 완료하였습니다.");
+                SetWorkCenter(); // 정상 완료 후 재조회
+
+                txtProductQty_H.Text = "";
+                txtBadQty_H.Text = "";
+            }
+            catch (Exception ex)
+            {
+                helper.Rollback();
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                helper.Close();
+            }
+
+        }
+        #endregion
     }
 }

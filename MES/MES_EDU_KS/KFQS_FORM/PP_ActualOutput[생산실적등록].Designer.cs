@@ -67,7 +67,7 @@ namespace KFQS_Form
             this.btnROHLotReg = new Infragistics.Win.Misc.UltraButton();
             this.sLabel4 = new DC00_Component.SLabel();
             this.txtROHLotNo_H = new DC00_Component.STextBox(this.components);
-            this.btnRunStop = new Infragistics.Win.Misc.UltraButton();
+            this.btnRunStop_H = new Infragistics.Win.Misc.UltraButton();
             this.sLabel5 = new DC00_Component.SLabel();
             this.sLabel6 = new DC00_Component.SLabel();
             this.txtProductQty_H = new DC00_Component.STextBox(this.components);
@@ -98,7 +98,7 @@ namespace KFQS_Form
             this.gbxHeader.ContentPadding.Top = 4;
             this.gbxHeader.Controls.Add(this.btnWorkOrderClose);
             this.gbxHeader.Controls.Add(this.btnProductReg);
-            this.gbxHeader.Controls.Add(this.btnRunStop);
+            this.gbxHeader.Controls.Add(this.btnRunStop_H);
             this.gbxHeader.Controls.Add(this.btnWorkOrderReg);
             this.gbxHeader.Controls.Add(this.txtBadQty_H);
             this.gbxHeader.Controls.Add(this.txtProductQty_H);
@@ -377,14 +377,15 @@ namespace KFQS_Form
             this.txtROHLotNo_H.Size = new System.Drawing.Size(196, 25);
             this.txtROHLotNo_H.TabIndex = 6;
             // 
-            // btnRunStop
+            // btnRunStop_H
             // 
-            this.btnRunStop.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnRunStop.Location = new System.Drawing.Point(523, 73);
-            this.btnRunStop.Name = "btnRunStop";
-            this.btnRunStop.Size = new System.Drawing.Size(160, 30);
-            this.btnRunStop.TabIndex = 8;
-            this.btnRunStop.Text = "(5) 가동";
+            this.btnRunStop_H.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRunStop_H.Location = new System.Drawing.Point(523, 73);
+            this.btnRunStop_H.Name = "btnRunStop_H";
+            this.btnRunStop_H.Size = new System.Drawing.Size(160, 30);
+            this.btnRunStop_H.TabIndex = 8;
+            this.btnRunStop_H.Text = "(5) 가동";
+            this.btnRunStop_H.Click += new System.EventHandler(this.btnRunStop_Click);
             // 
             // sLabel5
             // 
@@ -455,6 +456,7 @@ namespace KFQS_Form
             this.btnProductReg.Size = new System.Drawing.Size(160, 30);
             this.btnProductReg.TabIndex = 11;
             this.btnProductReg.Text = "(6) 생산 실적 등록";
+            this.btnProductReg.Click += new System.EventHandler(this.btnProductReg_Click);
             // 
             // btnWorkOrderClose
             // 
@@ -505,7 +507,7 @@ namespace KFQS_Form
         private Infragistics.Win.Misc.UltraGroupBox ultraGroupBox1;
         private DC00_Component.SLabel sLabel4;
         private DC00_Component.STextBox txtROHLotNo_H;
-        private Infragistics.Win.Misc.UltraButton btnRunStop;
+        private Infragistics.Win.Misc.UltraButton btnRunStop_H;
         private Infragistics.Win.Misc.UltraButton btnROHLotReg;
         private Infragistics.Win.Misc.UltraButton btnWorkOrderClose;
         private Infragistics.Win.Misc.UltraButton btnProductReg;

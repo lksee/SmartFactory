@@ -54,6 +54,18 @@
     <Compile Include="PP_ActualOutput[생산실적등록].Designer.cs">
       <DependentUpon>PP_ActualOutput[생산실적등록].cs</DependentUpon>
     </Compile>
+    <Compile Include="PP_StockHALBRec[재공 재고 입출 이력].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PP_StockHALBRec[재공 재고 입출 이력].designer.cs">
+      <DependentUpon>PP_StockHALBRec[재공 재고 입출 이력].cs</DependentUpon>
+    </Compile>
+    <Compile Include="PP_STockHALB[재공 재고조회].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PP_STockHALB[재공 재고조회].designer.cs">
+      <DependentUpon>PP_STockHALB[재공 재고조회].cs</DependentUpon>
+    </Compile>
     <Compile Include="PP_StockPPRec[공정창고입출고이력관리].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +187,12 @@
   <ItemGroup>
     <EmbeddedResource Include="PP_ActualOutput[생산실적등록].resx">
       <DependentUpon>PP_ActualOutput[생산실적등록].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PP_StockHALBRec[재공 재고 입출 이력].resx">
+      <DependentUpon>PP_StockHALBRec[재공 재고 입출 이력].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PP_STockHALB[재공 재고조회].resx">
+      <DependentUpon>PP_STockHALB[재공 재고조회].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PP_StockPPRec[공정창고입출고이력관리].resx">
       <DependentUpon>PP_StockPPRec[공정창고입출고이력관리].cs</DependentUpon>

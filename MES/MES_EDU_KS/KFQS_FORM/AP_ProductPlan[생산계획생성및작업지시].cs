@@ -52,6 +52,7 @@ namespace KFQS_Form
             _GridUtil.InitColumnUltraGrid(grid1, "ORDERDATE",           "확정일시",       GridColDataType_emu.DateTime24, 130, HAlign.Left,   true, false);
             _GridUtil.InitColumnUltraGrid(grid1, "ORDERWORKER",         "확정자",         GridColDataType_emu.VarChar,    130, HAlign.Left,   true, false);
             _GridUtil.InitColumnUltraGrid(grid1, "ORDERCLOSEFLAG",      "지시종료여부",   GridColDataType_emu.VarChar,    130, HAlign.Left,   true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "FIRSTSTARTDATE", "지시시작일자(최초)",  GridColDataType_emu.DateTime24, 130, HAlign.Left,   true, false);
             _GridUtil.InitColumnUltraGrid(grid1, "ORDERCLOSEDATE",      "지시종료일자",   GridColDataType_emu.DateTime24, 130, HAlign.Left,   true, false);
 
 
