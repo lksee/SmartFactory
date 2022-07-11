@@ -466,6 +466,7 @@ namespace KFQS_Form
             this.btnWorkOrderClose.Size = new System.Drawing.Size(160, 30);
             this.btnWorkOrderClose.TabIndex = 12;
             this.btnWorkOrderClose.Text = "(7) 작업 지시 종료";
+            this.btnWorkOrderClose.Click += new System.EventHandler(this.btnWorkOrderClose_H_Click);
             // 
             // PP_ActualOutput
             // 

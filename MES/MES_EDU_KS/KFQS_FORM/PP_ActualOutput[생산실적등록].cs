@@ -519,5 +519,67 @@ namespace KFQS_Form
 
         }
         #endregion
+
+        #region < 7. 작업지시 종료 >
+        private void btnWorkOrderClose_H_Click(object sender, EventArgs e)
+        {
+            if (grid1.Rows.Count == 0) return;
+            if (grid1.ActiveRow == null) return;
+
+            // 투입 된 원자재 LOT가 있을 경우 종료 되지 않도록 막기.
+            if (Convert.ToString(grid1.ActiveRow.Cells["MATLOTNO"].Value) != "")
+            {
+
+                ShowDialog("투입 된 원자재 LOT가 존재 합니다. 취소후 진행하세요");
+                return;
+            }
+
+            //가동 중 일 경우 비가동 등록 후 종료
+            if (Convert.ToString(grid1.ActiveRow.Cells["WORKSTATUSCODE"].Value) == "R")
+            {
+
+                ShowDialog("비가동 등록 후 종료 하세요");
+                return;
+            }
+
+            // 작업지시 종료 시작.
+            DBHelper helper = new DBHelper("", true);
+
+            try
+            {
+                string sItemCode = Convert.ToString(grid1.ActiveRow.Cells["ITEMCODE"].Value);
+                string sWorkcenterCode = Convert.ToString(grid1.ActiveRow.Cells["WORKCENTERCODE"].Value);
+                string sOrderNo = Convert.ToString(grid1.ActiveRow.Cells["ORDERNO"].Value);
+                string sUnitCode = Convert.ToString(grid1.ActiveRow.Cells["UNITCODE"].Value);
+
+                // 생산 실적 등록을 위한 프로시져
+                helper.ExecuteNoneQuery("13PP_ActualOutput_I6", CommandType.StoredProcedure
+                                        , helper.CreateParameter("@PLANTCODE",      sPlantCode)
+                                        , helper.CreateParameter("@WORKCENTERCODE", sWorkcenterCode)
+                                        , helper.CreateParameter("@ORDERNO",        sOrderNo)
+                                        );
+
+                if (helper.RSCODE != "S")
+                {
+                    throw new Exception($"작업지시 종료 중 오류가 발생하였습니다. \r\n{helper.RSMSG}");
+
+                }
+
+                helper.Commit();
+                ShowDialog("정상적으로 등록을 완료하였습니다.");
+
+                SetWorkCenter(); // 정상 완료 후 재조회
+            }
+            catch (Exception ex)
+            {
+                helper.Rollback();
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                helper.Close();
+            }
+        }
+        #endregion
     }
 }
