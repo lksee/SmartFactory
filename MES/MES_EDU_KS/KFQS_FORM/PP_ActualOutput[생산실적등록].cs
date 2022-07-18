@@ -484,7 +484,7 @@ namespace KFQS_Form
                 string sOrderNo = Convert.ToString(grid1.ActiveRow.Cells["ORDERNO"].Value);
                 string sUnitCode = Convert.ToString(grid1.ActiveRow.Cells["UNITCODE"].Value);
 
-                // 생산 실적 등록을 위한 프로시저
+                // 생산 실적 등록을 위한 프로시저 (불량 관리)
                 helper.ExecuteNoneQuery("13PP_ActualOutput_I5", CommandType.StoredProcedure
                     , helper.CreateParameter("@PLANTCODE",      sPlantCode)
                     , helper.CreateParameter("@WORKCENTERCODE", sWorkCenterCode)
@@ -494,18 +494,24 @@ namespace KFQS_Form
                     , helper.CreateParameter("@PRODQTY",        sTextProdQty)
                     , helper.CreateParameter("@BADQTY",         sTextBadQty)
                     , helper.CreateParameter("@MATLOTNO",       sMatLotNo)
-
-
                     );
 
                 if (helper.RSCODE != "S") throw new Exception($"생산 실적 등록 중 오류가 발생하였습니다.\r\n{helper.RSMSG}");
 
                 helper.Commit();
+
                 ShowDialog("정상적으로 등록을 완료하였습니다.");
                 SetWorkCenter(); // 정상 완료 후 재조회
 
                 txtProductQty_H.Text = "";
                 txtBadQty_H.Text = "";
+
+                // Commit 후 바코드 발행한다.
+                if (helper.RSMSG != "")
+                {
+                    PrintFertBarcode(helper.RSMSG);
+                }
+
             }
             catch (Exception ex)
             {
@@ -519,6 +525,41 @@ namespace KFQS_Form
 
         }
         #endregion
+
+        private void PrintFertBarcode(string LotNo)
+        {
+            DBHelper helper = new DBHelper(false);
+            try
+            {
+                string sLotNo = LotNo;
+
+                DataTable rtnDtTemp = helper.FillTable("PP_StockPP_S2", CommandType.StoredProcedure
+                                    , helper.CreateParameter("PLANTCODE", sPlantCode)
+                                    , helper.CreateParameter("LOTNO", sLotNo)
+                                    );
+                if (rtnDtTemp.Rows.Count == 0)
+                {
+                    this.ShowDialog("바코드 정보를 조회 할 내용이 없습니다.", DialogForm.DialogType.OK);
+                    return;
+                }
+                // 바코드 디자인 선언
+                Report_LotBacodeFERT sReport_LotBacode = new Report_LotBacodeFERT();
+                Telerik.Reporting.ReportBook reportBook = new Telerik.Reporting.ReportBook();
+                sReport_LotBacode.DataSource = rtnDtTemp;
+                reportBook.Reports.Add(sReport_LotBacode);
+
+                ReportViewer BARCODE_REPORTBOOK = new ReportViewer(reportBook, 1);
+                BARCODE_REPORTBOOK.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                ShowDialog(ex.ToString(), DialogForm.DialogType.OK);
+            }
+            finally
+            {
+                helper.Close();
+            }
+        }
 
         #region < 7. 작업지시 종료 >
         private void btnWorkOrderClose_H_Click(object sender, EventArgs e)

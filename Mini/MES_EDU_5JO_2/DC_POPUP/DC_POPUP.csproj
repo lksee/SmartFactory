@@ -45,7 +45,7 @@
     <Reference Include="DataMatrix.net">
       <HintPath>..\KFQS_MES_2022\DLL\DataMatrix.net.dll</HintPath>
     </Reference>
-    <Reference Include="DC00_assm, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="DC00_assm, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\KFQS_MES_2022\bin\Debug\DC00_assm.dll</HintPath>
     </Reference>
@@ -65,16 +65,50 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\KFQS_MES_2022\bin\Debug\DC00_WinForm.dll</HintPath>
     </Reference>
-    <Reference Include="Infragistics2.Documents.Excel.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics2.Shared.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics2.Win.Misc.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics2.Win.UltraWinEditors.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics2.Win.UltraWinGrid.ExcelExport.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics2.Win.UltraWinGrid.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics2.Win.UltraWinSchedule.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics2.Win.UltraWinTabControl.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics2.Win.UltraWinToolbars.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
-    <Reference Include="Infragistics2.Win.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Documents.Excel.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KFQS_MES_2022\DLL\Infragistics2.Documents.Excel.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KFQS_MES_2022\DLL\Infragistics2.Shared.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.Misc.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KFQS_MES_2022\DLL\Infragistics2.Win.Misc.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KFQS_MES_2022\DLL\Infragistics2.Win.UltraWinEditors.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.ExcelExport.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KFQS_MES_2022\DLL\Infragistics2.Win.UltraWinGrid.ExcelExport.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KFQS_MES_2022\DLL\Infragistics2.Win.UltraWinGrid.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinSchedule.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KFQS_MES_2022\DLL\Infragistics2.Win.UltraWinSchedule.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KFQS_MES_2022\DLL\Infragistics2.Win.UltraWinTabControl.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KFQS_MES_2022\DLL\Infragistics2.Win.UltraWinToolbars.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KFQS_MES_2022\DLL\Infragistics2.Win.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics3.Documents.Excel.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KFQS_MES_2022\DLL\Infragistics3.Documents.Excel.v11.1.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -96,6 +130,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="POP_INSPSTATE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POP_INSPSTATE.designer.cs">
+      <DependentUpon>POP_INSPSTATE.cs</DependentUpon>
+    </Compile>
     <Compile Include="POP_TBM0100[품목].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,11 +160,17 @@
     <Compile Include="POP_TBM0400[작업장].designer.cs">
       <DependentUpon>POP_TBM0400[작업장].cs</DependentUpon>
     </Compile>
-    <Compile Include="POP_WOKRORDER.cs">
+    <Compile Include="POP_POSpec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="POP_WOKRORDER.Designer.cs">
-      <DependentUpon>POP_WOKRORDER.cs</DependentUpon>
+    <Compile Include="POP_POSpec.Designer.cs">
+      <DependentUpon>POP_POSpec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POP_WORKORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POP_WORKORDER.Designer.cs">
+      <DependentUpon>POP_WORKORDER.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportViewer.cs">
@@ -153,7 +199,7 @@
     <Compile Include="Report_LotBacode.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Report_LotBacode.Designer.cs">
+    <Compile Include="Report_LotBacode.designer.cs">
       <DependentUpon>Report_LotBacode.cs</DependentUpon>
     </Compile>
     <Compile Include="Report_LotBacodeFERT.cs">
@@ -164,6 +210,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="POP_INSPSTATE.resx">
+      <DependentUpon>POP_INSPSTATE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="POP_TBM0100[품목].resx">
       <DependentUpon>POP_TBM0100[품목].cs</DependentUpon>
     </EmbeddedResource>
@@ -176,8 +225,11 @@
     <EmbeddedResource Include="POP_TBM0400[작업장].resx">
       <DependentUpon>POP_TBM0400[작업장].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="POP_WOKRORDER.resx">
-      <DependentUpon>POP_WOKRORDER.cs</DependentUpon>
+    <EmbeddedResource Include="POP_POSpec.resx">
+      <DependentUpon>POP_POSpec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POP_WORKORDER.resx">
+      <DependentUpon>POP_WORKORDER.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="ReportViewer.resx">
