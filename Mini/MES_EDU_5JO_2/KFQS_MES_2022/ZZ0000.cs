@@ -61,7 +61,7 @@ namespace KFQS_MES_2022
             string ConnStr = string.Empty;
             if (appConfig.AppSettings.Settings["PLACE"].Value.ToString() == "DEV") // 개발 PC
             {
-                ConnStr = @"Data Source=222.235.141.8; Initial Catalog=DC_EDU_SH;User ID=kfqs;Password=1234";
+                ConnStr = @"Data Source=localhost; Initial Catalog=DC_EDU_SH;User ID=sa;Password=sqlserver12!@";
                 Configuration appConfig1 = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 appConfig1.ConnectionStrings.ConnectionStrings["ConnectionString"].ConnectionString = ConnStr;
                 appConfig1.Save();
