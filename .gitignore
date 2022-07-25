@@ -271,3 +271,8 @@ FakesAssemblies/
 *.jpg
 *.pptx
 *.txt
+
+
+web.xml
+
+*.properties
