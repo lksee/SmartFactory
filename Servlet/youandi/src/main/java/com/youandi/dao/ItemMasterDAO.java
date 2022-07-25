@@ -1,4 +1,4 @@
-package kr.co.mlec.board.dao;
+package com.youandi.dao;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -11,34 +11,30 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import kr.co.mlec.board.vo.BoardVO;
+import com.youandi.vo.ItemMasterVO;
 
 /**
- * t_board 테이블의 게시판 데이터 CRUD 기능 클래스
- * 
- * @author user
+ * item_master 테이블 조회
+ * @author 이기수
+ *
  */
-public class BoardDAO {
+public class ItemMasterDAO {
 
-	/**
-	 * 전체 게시글 조회 기능
-	 */
-	public List<BoardVO> selectAll() {
-		// 기본 값 초기화
-		List<BoardVO> boardList = new ArrayList<BoardVO>();
+	public List<ItemMasterVO> selectAll() {
+		List<ItemMasterVO> itemmaster = new ArrayList<ItemMasterVO>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		InputStream input = null;
 		String url = "";
 		String user = "";
 		String password = "";
-
+		
 		try {
 			// 1단계 : 드라이버 로딩
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
 			// 2단계 : DB 접속 및 Connection 객체 얻어오기
-			input = new FileInputStream("D:\\SmartFactory\\Servlet\\LectureMVC\\src\\main\\webapp\\WEB-INF\\db.properties");
+			input = new FileInputStream("D:\\SmartFactory\\Servlet\\youandi\\src\\main\\webapp\\WEB-INF\\db.properties");
 
 			Properties prop = new Properties();
 			prop.load(input);
@@ -52,9 +48,9 @@ public class BoardDAO {
 			
 			// 3단계 : SQL 생성 및 쿼리 실행 객체(PreparedStatement) 얻어오기
 			StringBuilder sql = new StringBuilder();
-			sql.append("select no, title, writer, to_char(reg_date, 'yyyy-mm-dd') as reg_date ");
-			sql.append("  from t_board ");
-			sql.append(" order by no desc ");
+			sql.append("SELECT itemcode, itemname, itemtype, whcode, baseunit, unitcost, itemspec, minorderqty, orderqty, maxorderqty, to_char(MAKEDATE, 'yyyy-mm-dd') AS makedate, maker ");
+			sql.append("  FROM ITEM_MASTER ");
+			sql.append(" ORDER BY ITEMCODE ASC ");
 			
 			pstmt = conn.prepareStatement(sql.toString());
 			
@@ -64,19 +60,34 @@ public class BoardDAO {
 			ResultSet rs = pstmt.executeQuery();
 			
 			while (rs.next()) {
-				int no 			= rs.getInt("no");
-				String title 	= rs.getString("title");
-				String wrtier 	= rs.getString("writer");
-				String reg_date = rs.getString("reg_date");
+				String itemcode		= rs.getString("itemcode");
+				String itemname 	= rs.getString("itemname");
+				String itemtype		= rs.getString("itemtype");
+				String whcode   	= rs.getString("whcode");
+				String baseunit 	= rs.getString("baseunit");
+				float  unitcost 	= rs.getFloat("unitcost");
+				String itemspec 	= rs.getString("itemspec");
+				float  minorderqty 	= rs.getFloat("minorderqty");
+				float  orderqty		= rs.getFloat("orderqty");
+				float  maxorderqty	= rs.getFloat("maxorderqty");
+				String makedate		= rs.getString("makedate");
+				String maker		= rs.getString("maker");
 				
-				BoardVO board = new BoardVO();
-				board.setNo(no);
-				board.setTitle(title);
-				board.setWriter(wrtier);
-				board.setRegDate(reg_date);
+				ItemMasterVO item = new ItemMasterVO();
+				item.setITEMCODE(itemcode);
+				item.setITEMNAME(itemname);
+				item.setITEMTYPE(itemtype);
+				item.setWHCODE(whcode);
+				item.setBASEUNIT(baseunit);
+				item.setUNITCOST(unitcost);
+				item.setITEMSPEC(itemspec);
+				item.setMINORDERQTY(minorderqty);
+				item.setORDERQTY(orderqty);
+				item.setMAXORDERQTY(maxorderqty);
+				item.setMAKEDATE(makedate);
+				item.setMAKER(maker);
 				
-				boardList.add(board);
-				System.out.println(board); // Override한 board.toString()의 반환값 출력
+				itemmaster.add(item);
 			}
 			
 		} catch (Exception e) {
@@ -95,7 +106,8 @@ public class BoardDAO {
 				e.printStackTrace();
 			}
 		}
-
-		return boardList;
+		
+		return itemmaster;
 	}
+
 }

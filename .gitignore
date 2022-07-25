@@ -273,6 +273,9 @@ FakesAssemblies/
 *.txt
 
 
+# Eclipse
+.classpath
+.project
+.settings/
 web.xml
-
 *.properties
