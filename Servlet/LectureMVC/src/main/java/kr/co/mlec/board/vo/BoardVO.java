@@ -14,15 +14,33 @@ public class BoardVO {
 	private String content;
 	private int viewCnt;
 	private String regDate;
-	
+
 	public BoardVO() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public BoardVO(String title, String writer) {
 		super();
 		this.title = title;
 		this.writer = writer;
+	}
+
+	public BoardVO(int no, String title, String writer, String content, int viewCnt, String regDate) {
+		super();
+		this.no = no;
+		this.title = title;
+		this.writer = writer;
+		this.content = content;
+		this.viewCnt = viewCnt;
+		this.regDate = regDate;
+	}
+
+	public BoardVO(int no, String title, String writer, String content) {
+		super();
+		this.no = no;
+		this.title = title;
+		this.writer = writer;
+		this.content = content;
 	}
 
 	public int getNo() {
@@ -78,6 +96,5 @@ public class BoardVO {
 		return "BoardVO [no=" + no + ", title=" + title + ", writer=" + writer + ", content=" + content + ", viewCnt="
 				+ viewCnt + ", regDate=" + regDate + "]";
 	}
-	
-	
+
 }

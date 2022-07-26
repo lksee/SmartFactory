@@ -9,7 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.co.mlec.controller.BoardDeleteController;
+import kr.co.mlec.controller.BoardDetailController;
 import kr.co.mlec.controller.BoardListController;
+import kr.co.mlec.controller.BoardUpdateController;
+import kr.co.mlec.controller.BoardUpdateFormController;
+import kr.co.mlec.controller.BoardWriteController;
 import kr.co.mlec.controller.BoardWriteFormController;
 import kr.co.mlec.controller.Controller;
 
@@ -27,7 +32,7 @@ public class DispatcherServlet extends HttpServlet {
 
 		String uri = request.getRequestURI();
 		uri = uri.substring(context.length());
-		System.out.println("호출 uri : " + uri);
+//		System.out.println("호출 uri : " + uri);
 
 		// forward할 JSP 경로를 담을 변수
 		Controller control = null;
@@ -42,6 +47,21 @@ public class DispatcherServlet extends HttpServlet {
 			case "/board/writeForm.do":
 //				System.out.println("새글 등록 서비스...");
 				control = new BoardWriteFormController();
+				break;
+			case "/board/write.do":
+				control = new BoardWriteController();
+				break;
+			case "/board/detail.do":
+				control = new BoardDetailController();
+				break;
+			case "/board/delete.do":
+				control = new BoardDeleteController();
+				break;
+			case "/board/updateForm.do":
+				control = new BoardUpdateFormController();
+				break;
+			case "/board/update.do":
+				control = new BoardUpdateController();
 				break;
 			}
 
