@@ -17,6 +17,9 @@ import kr.co.mlec.controller.BoardUpdateFormController;
 import kr.co.mlec.controller.BoardWriteController;
 import kr.co.mlec.controller.BoardWriteFormController;
 import kr.co.mlec.controller.Controller;
+import kr.co.mlec.controller.LoginController;
+import kr.co.mlec.controller.LoginProcessController;
+import kr.co.mlec.controller.LogoutController;
 
 @WebServlet("*.do")
 public class DispatcherServlet extends HttpServlet {
@@ -63,14 +66,28 @@ public class DispatcherServlet extends HttpServlet {
 			case "/board/update.do":
 				control = new BoardUpdateController();
 				break;
+			case "/login.do":
+				control = new LoginController();
+				break;
+			case "/loginProcess.do":
+				control = new LoginProcessController();
+				break;
+			case "/logout.do":
+				control = new LogoutController();
+				break;
 			}
 
 			// forward to JSP pages.
 			if (control != null) {
 				callPage = control.handleRequest(request, response);
 
-				RequestDispatcher dispatcher = request.getRequestDispatcher(callPage);
-				dispatcher.forward(request, response);
+				if (callPage.startsWith("redirect:")) {
+					callPage = callPage.substring("redirect:".length());
+					response.sendRedirect(context + callPage);
+				} else {
+					RequestDispatcher dispatcher = request.getRequestDispatcher(callPage);
+					dispatcher.forward(request, response);
+				}
 			}
 
 		} catch (Exception e) {
