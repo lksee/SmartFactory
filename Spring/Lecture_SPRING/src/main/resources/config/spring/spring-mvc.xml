@@ -36,6 +36,17 @@
 	</mvc:annotation-driven>
 	<mvc:default-servlet-handler />
 	
+	<!-- 오라클 DB -->
+	<bean id="dataSource"
+	      class="org.apache.commons.dbcp.BasicDataSource" 
+	      destroy-method="close">
+	      <!-- property는 setter를 의미 -->
+	      <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+	      <property name="url" value="jdbc:oracle:thin:@localhost:1521/ORACLEDB"/>
+	      <property name="username" value="bdwrtr" />
+	      <property name="password" value="oracle12!@" />
+    </bean>
+	
 	<mvc:view-resolvers>
 		<mvc:jsp prefix="/WEB-INF/jsp/" suffix=".jsp" />
 	</mvc:view-resolvers>

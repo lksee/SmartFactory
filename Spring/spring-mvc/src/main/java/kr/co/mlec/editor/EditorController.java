@@ -11,7 +11,6 @@ public class EditorController {
 	public ModelAndView editor() {
 		
 		ModelAndView mav = new ModelAndView("/editor/editor");
-		
 		return mav;
 	}
 }
