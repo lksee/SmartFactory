@@ -1,5 +1,7 @@
 package kr.co.mlec.board.vo;
 
+import javax.validation.constraints.NotEmpty;
+
 /*
  	1. class 접근지정자 public
  	2. 모든 멤버변수의 접근지정자 private
@@ -9,8 +11,11 @@ package kr.co.mlec.board.vo;
 
 public class BoardVO {
 	private int no;
+	@NotEmpty(message="필수 항목입니다.")
 	private String title;
+	@NotEmpty(message="필수 항목입니다.")
 	private String writer;
+	@NotEmpty(message="필수 항목입니다.")
 	private String content;
 	private int viewCnt;
 	private String regDate;

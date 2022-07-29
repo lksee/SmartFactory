@@ -93,6 +93,23 @@
 			<scope>test</scope>
 		</dependency>
 	<!-- junit End -->
+	
+	<!-- JSTL Start -->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+	<!-- JSTL End -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.2.3.Final</version>
+		</dependency>
+	<!-- Hibernate Start -->
+	<!-- Hibernate End -->
 	</dependencies>
 
 	<build>
